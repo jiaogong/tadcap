@@ -1,0 +1,33 @@
+<view class="publish"  wx:if="{{tips}}">
+    <image src="/images/icon/kong.png"></image>
+    <view class="a">你还没有参加过签到</view>
+    <view class="b">去发现页加入一个吧</view>
+</view>
+
+
+
+<view class="list" >
+
+</view>
+
+<block wx:for="{{data_list}}" wx:key="item">
+    <view class='container' hover-class="hover" hover-stay-time="100" bindtap="change" data-id="{{item.projectId}}">
+        <view class='{{item.hasUsed}}'>
+            <text>{{item.endTime}}</text>
+        </view>
+        <view class="name">
+            <text>{{item.projectName}}</text>
+        </view>
+    <image src='/images/icon/enter.png' class='right'></image>
+    <view class='user'>
+        <image src='/images/icon/id.png'></image>
+        <text>{{item.projectId}}</text>
+    </view>
+
+    <view class='time'>
+        <image src='/images/icon/tim.png'></image>
+        <text>{{item.startTime}}</text>
+    </view>
+    </view>
+
+</block>

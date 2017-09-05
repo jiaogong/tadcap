@@ -1,0 +1,49 @@
+<view class="top">
+     <image src="{{head}}"></image>
+     <view class='block-big'></view>
+     <text class='a'>@{{name}}邀请你参加签到</text> 
+</view>
+
+<view class='cover'>
+<view class='block'></view>
+    <text class='name'>{{vue.projectName}}</text>
+
+    <view class="container">
+
+    <view class="time">
+        <view class="c">
+            <image src='/images/icon/time.png' ></image>
+        </view>
+        <view class="tim">{{time}}</view>
+    </view>
+
+    <view class="place-name">
+        <view class="n">
+            <image src='/images/icon/place.png' ></image>
+        </view>
+    <view class="place-nam">////////////</view>
+    </view>
+
+    <view class="place-address">
+        <view class="m">
+            <image src="/images/icon/plpl.png" ></image>
+        </view>
+    <view class="place-addres">sdsadasdasd</view>
+    </view>
+    
+    </view>
+</view>
+
+
+<button class='now' type='primary' bindtap="enter" data-id="{{vue.projectId}}">立即报名</button>
+
+
+<view class="people-num">- 还有{{num}}人也参加了这次签到 -</view>
+
+<view class="img-list">
+<block wx:for="{{dataList}}" wx:key="item">
+    <image class="userinfo-avatar" src="{{item}}" background-size="cover"></image>
+
+</block>
+</view>
+

@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="photo">
+    <image src="{{buttonImg}}" bindtap="editAddress" bindtouchstart="mytouchstart" bindtouchend="mytouchend"></image>
+</view>

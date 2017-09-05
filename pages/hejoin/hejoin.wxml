@@ -1,0 +1,26 @@
+<view class="container">
+    <view class="block"></view>
+    <view class="name">{{vue.projectName}}</view>
+     <image src="/images/icon/tim.png" class="tim"></image> 
+    <view class="time">
+        {{time}}
+    </view>
+    <image src="/images/icon/place.png" class="place"></image>
+    <view class="placename">
+        ////////
+    </view>
+    <image src="/images/icon/plpl.png" class="plpl"></image>
+    <view class="placeaddress">
+        /////////
+    </view>
+</view>
+
+<view class="share">
+    <text>发送到需要报名的群聊或者好友</text>
+    <view class="block-share"></view>
+    <button bindtap="share" type="primary" >邀请好友报名</button>
+</view>
+
+<view class="obj">
+    
+</view>

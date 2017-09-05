@@ -1,0 +1,13 @@
+ <view class="topic">使用说明</view>
+ 
+<view class="ask">1.怎么用蝌蚪签到？</view>
+<view class="answer">好问题，如果你是签到任务的发起者，那么你可以点击【我的】-【发起签到】来创建一个签到，然后让大家报名，到时候在手机上查看就好了</view>
+<view class="answer">如果你是来参加签到，那么如果你之前报名参加了签到，你只需要在指定时间到指定地点点一下首页那个圆圆的按钮就可以了</view>
+
+<view class="ask">2.如何快速邀请人报名签到？</view>
+<view class="answer">线上：点击【邀请好友报名】将小程序分享到群聊或者好友</view>
+<view class="answer">线下：使用【面对面建群】然后将小程序分享到群聊</view>
+<view class="answer">或者用醒目的方式告诉参与者项目ID号通过搜索报名，方法不局限于大声喊出来，写在黑板上...</view>
+        
+
+

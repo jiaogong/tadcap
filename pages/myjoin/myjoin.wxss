@@ -1,0 +1,87 @@
+/* pages/myjoin/myjoin.wxss */
+.container{
+    height: 350rpx;
+    background-color: #FFF;
+}
+
+.name{
+    font-size: 50rpx;
+    font-weight: bold;
+    text-align: center;
+
+}
+.block{
+    height: 20rpx;
+}
+.time image{
+    width: 30rpx;
+    height: 30rpx;
+}
+.time{
+    margin-top: 50rpx;
+    margin-left: 150rpx;
+    font-size: 30rpx;
+    color: #555;
+}
+
+.placename{
+    margin-top: 30rpx;
+    margin-left: 150rpx;
+    font-size: 28rpx;
+    color: #555;
+}
+
+.placename image{
+    width: 30rpx;
+    height: 30rpx;
+}
+.placeaddress image{
+    width: 28rpx;
+    height: 28rpx;
+}
+.time image{
+    width: 28rpx;
+    height: 28rpx;
+}
+
+.placeaddress{
+    margin-top: 30rpx;
+    margin-left: 150rpx;
+    font-size: 28rpx;
+    color: #555;
+}
+/* .tim{
+    position: absolute;
+    top: 140rpx;
+    left: 94rpx;
+    width: 30rpx;
+    height: 30rpx;
+} */
+/* .place{
+    position: absolute;
+    top: 205rpx;
+    left: 90rpx;
+    width: 36rpx;
+    height: 36rpx;
+} */
+/* .plpl{
+    position: absolute;
+    top: 276rpx;
+    left: 95rpx;
+    width: 29rpx;
+    height: 29rpx;
+} */
+
+.share{
+    width: 550rpx;
+    margin: 60rpx auto 50rpx auto;
+    text-align: center;
+}
+.share text{
+    font-size: 32rpx;
+    color: #BBB;
+    padding-bottom: 20rpx;
+}
+.block-share{
+    height: 25rpx;
+}

@@ -1,0 +1,246 @@
+.white{
+    position: absolute;
+    width: 600rpx;
+    height: 300rpx;
+    top: 45rpx;
+    left: 75rpx;
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-color: #E9E9E9;
+    border-width: 1px;
+    border-radius: 14rpx;
+    text-align:center;
+}
+
+.name{
+    margin-top: 45rpx;
+    font-size: 46rpx;
+    font-weight: bold;
+    color: #555555;
+}
+
+.shouldnot{
+    position: absolute;
+    left: 85rpx;
+    top: 145rpx;
+}
+.shouldnotnum{
+    font-size: 55rpx;
+    color: #E64340;
+    font-weight: bold;
+    margin: 0px;
+}
+.shouldnotdao{
+    font-size: 24rpx;
+    color: #555555;
+    margin: 0px;
+}
+
+.allnum{
+    position: absolute;
+    left: 340rpx;
+    top: 160rpx;
+    color: #555555;
+    font-size: 28rpx;
+}
+.all-{
+    margin-left: 4rpx;
+    font-weight: bold;
+    font-size: 28rpx;
+}
+.real-{
+    margin-left: 4rpx;
+    font-weight: bold;
+    font-size: 28rpx;
+    padding-top: 22rpx;
+}
+.realum{
+    position: absolute;
+    left: 340rpx;
+    top: 205rpx;
+    font-size: 28rpx;
+    color: #555555;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-size: 35rpx;
+    color: #333;
+    margin-top: 300rpx;
+}
+.canvas {
+    width: 100%;
+    height: 200px;
+}
+
+.change{
+    margin-top: 385rpx;
+    margin-left: 300rpx;
+    width: 52rpx;
+    height: 52rpx;
+    padding-top: 16rpx;
+    padding-left: 50rpx;
+}
+
+
+.cut{
+    margin-top: 30rpx;
+    margin-left: 225rpx;
+    width: 300rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #BBB;
+}
+
+.list{
+    margin-top: 2px;
+    height: 85rpx;
+    margin-left: 70rpx;
+    margin-right: 70rpx;
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 1rpx;
+    border-color: #E3E3E3;
+    border-radius: 3px;
+}
+
+.nocom{
+    margin: 0;
+    padding-left: 108rpx;
+    padding-top: 22rpx;
+    font-size: 28rpx;
+    color: #555;
+    width: 450rpx;
+}
+.delete{
+    width: 36rpx;
+    height: 36rpx;
+    position: absolute;
+    right: 130rpx;
+    padding-top: 4rpx;
+}
+.lv{
+    width: 46rpx;
+    height: 50rpx;
+    position: absolute;
+    left: 120rpx;
+}
+
+.hover{
+    background-color: rgb(247,247,250);
+}
+
+.block{
+    height:20rpx;
+    background-color: #F5F5F5;
+}
+
+
+/***************复制过来的*******************/
+
+/*button*/  
+.btn {  
+  width: 80%;  
+  padding: 20rpx 0;  
+  border-radius: 10rpx;  
+  text-align: center;  
+  margin: 40rpx 10%;  
+  background: #000;  
+  color: #fff;  
+}  
+  
+/*mask*/  
+.drawer_screen {  
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 1000;  
+  background: #000;  
+  opacity: 0.5;  
+  overflow: hidden;  
+}  
+  
+/*content*/  
+.drawer_box {  
+  width: 500rpx;  
+  overflow: hidden;  
+  position: fixed;  
+  top: 50%;  
+  left: 70rpx;  
+  z-index: 1001;  
+  background: #FAFAFA;  
+  margin: -150px 50rpx 0 50rpx;  
+  border-radius: 3px;  
+}  
+  
+.drawer_title{  
+  padding:15px;  
+  font: 20px;  
+  text-align: center;  
+}  
+.drawer_content {  
+  height: 410rpx;  
+  overflow-y: scroll; /*超出父盒子高度可滚动*/  
+}  
+  
+.btn_ok{  
+  padding: 10px;  
+  font: 20px;  
+  text-align: center;  
+  border-top: 1px solid #E8E8EA;  
+  color: #3CC51F;  
+}  
+  
+.top{  
+    padding-top:8px;  
+}  
+.bottom {  
+    padding-bottom:8px;  
+}  
+.title {  
+    height: 30px;  
+    line-height: 30px;  
+    width: 160rpx;  
+    text-align: center;  
+    display: inline-block;  
+    font: 300 28rpx/30px "microsoft yahei";  
+}  
+  
+.input_base {  
+    border: 2rpx solid #ccc;  
+    padding-left: 10rpx;  
+    margin-right: 50rpx;  
+}  
+.input_h30{  
+    height: 30px;  
+    line-height: 30px;  
+}  
+.input_h60{  
+    height: 60px;  
+}  
+.input_view{  
+    font: 12px "microsoft yahei";  
+    background: #fff;  
+    color:#000;  
+    line-height: 30px;  
+}  
+  
+input {  
+    font: 12px "microsoft yahei";  
+    background: #fff;  
+    color:#000 ;  
+}  
+radio{  
+    margin-right: 20px;  
+}  
+.grid { display: -webkit-box; display: box; }  
+.col-0 {-webkit-box-flex:0;box-flex:0;}  
+.col-1 {-webkit-box-flex:1;box-flex:1;}  
+.fl { float: left;}  
+.fr { float: right;}  
+

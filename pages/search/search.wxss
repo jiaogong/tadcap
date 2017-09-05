@@ -1,0 +1,166 @@
+/* pages/myjoin/myjoin.wxss */
+.container{
+    height: 350rpx;
+    background-color: #FFF;
+}
+
+.name{
+    font-size: 50rpx;
+    font-weight: bold;
+    text-align: center;
+
+}
+.block{
+    height: 20rpx;
+}
+.time image{
+    width: 36rpx;
+    height: 36rpx;
+}
+.time{
+    margin-top: 50rpx;
+    margin-left: 150rpx;
+    font-size: 28rpx;
+    color: #555;
+}
+
+.placename{
+    margin-top: 30rpx;
+    margin-left: 150rpx;
+    font-size: 28rpx;
+    color: #555;
+}
+
+.placeaddress{
+    margin-top: 30rpx;
+    margin-left: 150rpx;
+    font-size: 28rpx;
+    color: #555;
+}
+
+.tim{
+    position: absolute;
+    top: 140rpx;
+    left: 94rpx;
+    width: 30rpx;
+    height: 30rpx;
+}
+.place{
+    position: absolute;
+    top: 205rpx;
+    left: 90rpx;
+    width: 36rpx;
+    height: 36rpx;
+}
+.plpl{
+    position: absolute;
+    top: 276rpx;
+    left: 95rpx;
+    width: 29rpx;
+    height: 29rpx;
+}
+
+.share{
+    width: 550rpx;
+    margin: 60rpx auto 0 auto;
+    text-align: center;
+}
+.share text{
+    font-size: 32rpx;
+    color: #BBB;
+    padding-bottom: 20rpx;
+}
+.block-share{
+    height: 25rpx;
+}
+
+.people-num{
+    color: #888;
+    font-size: 32rpx;
+    margin-top: 100rpx;
+    text-align: center;
+}
+
+.img-list{
+    margin-top: 20rpx;
+    width: 580rpx;
+    margin-left: 85rpx;
+    text-align: center;
+}
+
+
+
+.contain{
+    width: 650rpx;
+    height: 250rpx;
+    margin: 25rpx auto 0 auto;
+}
+.time{
+    width: 500rpx;
+    height: 40rpx;
+    font-size: 28rpx;
+    color: #555;
+    margin:45rpx auto 0 auto;
+    text-align: left;
+}
+.place-name{
+    width: 500rpx;
+    height: 40rpx;
+    font-size: 28rpx;
+    color: #555;
+    margin: 12rpx auto 0 auto;
+    text-align: left;
+}
+.place-address{
+    width: 500rpx;
+    height: 40rpx;
+    font-size: 28rpx;
+    color: #555;
+    border-color: green;
+    margin: 12rpx auto 0 auto;
+    text-align: left;
+}
+.n{
+    width: 24rpx;
+    height: 24rpx;
+    float: left;
+    margin: 1rpx 12rpx 0 0;
+}
+.m{
+    width: 24rpx;
+    height: 24rpx;
+    float: left;
+    margin: 4rpx 12rpx 0 0;
+}
+.c{
+    width: 24rpx;
+    height: 24rpx;
+    float: left;
+    margin: 3rpx 12rpx 0 0;
+}
+.c image{
+    width: 24rpx;
+    height: 24rpx;
+}
+.n image{
+    width: 24rpx;
+    height: 24rpx;
+}
+.m image{
+    width: 24rpx;
+    height: 24rpx;
+}
+.place-nam{
+    margin: 6rpx 0 0 22rpx;
+    font-size: 30rpx;
+    color: #555;
+}
+.place-addres{
+    margin: 6rpx 0 0 22rpx;
+    font-size: 30rpx;
+    color: #555;
+}
+.ti{
+    font-size: 30rpx;
+    color: #555;
+}

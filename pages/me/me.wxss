@@ -1,0 +1,104 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 750rpx;
+  height: 300rpx;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  border-color: #E3E3E3;
+  border-style: double;
+  border-width: 4px;
+  margin-top: 60rpx;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.bt{
+    background-image: url("/images/photo/22.png");
+}
+
+
+/* pages/me/me.wxss */
+
+.person{
+    background-color: rgb(255,255,255);
+    height: 250rpx;
+    width: 750rpx;
+    margin-bottom: 20rpx;
+
+}
+
+.me{
+    margin-top: 0;
+    background-color: rgb(255,255,255);
+    line-height: 80rpx;
+    padding-top: 10rpx;
+    padding-left: 30rpx;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: #E3E3E3;
+}
+.mid{
+    margin-top: 0;
+    background-color: rgb(255,255,255);
+    line-height: 80rpx;
+    padding-top: 10rpx;
+    padding-left: 30rpx;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: #F3F3F3;
+}
+
+
+.mebtn{
+    background-color: rgb(247,247,250);
+}
+
+.block{
+    border-color: rgb(247, 247, 250);
+    border-style: solid;
+    border-width: 8px;
+}
+
+.bootom{
+    margin-top: 4rpx;
+    background-color: rgb(255,255,255);
+    line-height: 80rpx;
+    padding-top: 10rpx;
+    padding-left: 30rpx;
+}
+
+.dui{
+    width: 46rpx;
+    height: 46rpx;
+    float: right;
+    padding-top: 16rpx;
+    padding-right: 24rpx;
+ 
+}
+
+.font{
+   color: #555555;
+}
+
+.contact{
+    background-color: #42C541;
+    padding: 18rpx;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 66rpx;
+    position: fixed;
+    right: 36rpx;
+    bottom: 36rpx;
+}
+
+

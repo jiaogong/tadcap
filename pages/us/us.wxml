@@ -1,0 +1,23 @@
+<view class="container">
+    <image src="/images/icon/tadcap.png" class="img"></image>
+    <text class="txt">蝌蚪签到</text>
+    <text class="men">www.tadcap.com</text>
+</view>
+
+<image src="/images/icon/line.png" class="line"></image>
+
+<view class="area">
+    <view class="a">蝌蚪签到的创作者是</view>
+    <view class="a">东华大学计算机学院的几个大三学生</view>
+    <view class="a">现在我们正在寻求XXX方面的实习</view>
+    <view class="a">如果你喜欢我们的作品</view>
+    <view class="a">欢迎联系我们</view>
+</view>
+
+<view bindlongtap="cut">
+    <image src="/images/icon/wechat.png" class="img1"></image>
+    <text class="txt1">长按识别二维码，加我微信</text>
+</view>
+<image src='/images/icon/tal.png' class='tal'></image>
+
+

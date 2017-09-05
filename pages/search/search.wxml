@@ -1,0 +1,48 @@
+<view class="container">
+    <view class="block"></view>
+    <view class="name">{{vue.projectName}}</view>
+     <!-- <image src="/images/icon/tim.png" class="tim"></image> 
+    <view class="time">
+        {{time}}
+    </view>
+    <image src="/images/icon/place.png" class="place"></image>
+    <view class="placename">
+        港汇恒隆广场
+    </view>
+    <image src="/images/icon/plpl.png" class="plpl"></image>
+    <view class="placeaddress">
+        上海徐家汇港汇恒隆广场
+    </view> -->
+     <view class="contain">
+
+    <view class="time">
+        <view class="c">
+            <image src='/images/icon/time.png' ></image>
+        </view>
+        <view class="ti">{{time}}</view>
+    </view>
+
+    <view class="place-name">
+        <view class="n">
+            <image src='/images/icon/place.png' ></image>
+        </view>
+    <view class="place-nam">////////////</view>
+    </view>
+
+    <view class="place-address">
+        <view class="m">
+            <image src="/images/icon/plpl.png" ></image>
+        </view>
+    <view class="place-addres">sdsadasdasd</view>
+    </view>
+    
+    </view>
+</view>
+
+<view class="share">
+    <button bindtap="baoming" type="primary" >立即报名</button>
+</view>
+
+<view class="obj">
+    
+</view>

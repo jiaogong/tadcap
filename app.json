@@ -1,0 +1,53 @@
+ {
+  "pages":[
+    "pages/index/index",
+    "pages/find/find",
+    "pages/me/me",
+    "pages/enter/enter",
+    "pages/baoming/baoming",
+    "pages/search/search",
+    "pages/myjoin/myjoin",
+    "pages/hejoin/hejoin",
+    "pages/sign/sign",
+    "pages/register/register",
+    "pages/publish/publish",
+    "pages/join/join",
+    "pages/us/us",
+    "pages/help/help",
+    "pages/simple/simple",
+    "pages/share/share",
+    "pages/perchas/perchas"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#F5F5F5",
+    "navigationBarTextStyle":"black",
+    "backgroundColor":"#F5F5F5"
+  },
+  "tabBar": {
+      "borderStyle": "black",
+      "color": "#888",
+      "selectedColor": "#42C541",
+      "backgroundColor":"#F8F8F8",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "签到",
+      "iconPath": "images/icon/11.png",
+      "selectedIconPath":"images/icon/a.png"
+    },
+    {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "images/icon/22.png",
+        "selectedIconPath": "images/icon/b.png"
+    },
+    {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/icon/33.png",
+        "selectedIconPath": "images/icon/c.png"
+    }
+    ]
+  }
+}

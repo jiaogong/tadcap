@@ -1,0 +1,99 @@
+<form bindsubmit="formsubmit">
+<view class="name">
+    <view class="name-left">
+        活动名称：
+    </view>
+    <view class="name-right">
+        <input maxlength="10" focus="true" name="ProjectName"/>
+    </view>
+</view>
+
+<view class="time">
+    <view class="time-left">
+        开始时间：
+    </view>
+    <view class="time-mid">
+        <picker mode="date" value="{{date}}" start="{{date}}" end="2018-12-31" bindchange="bindDateChange" name="StartTimeDay">
+             <view class="picker">
+                  {{date}}
+            </view>
+        </picker>
+    </view>
+
+    <view class="line"></view>
+
+    <view class="time-right">
+        <picker mode="time" value="{{time}}"  bindchange="bindTimeChange" name="StartTimeHour">
+            <view class="picker">
+                    {{time}}
+            </view>
+        </picker>
+    </view>
+</view>
+
+<view class="late">
+    <view class="late-left">
+        签到开始多久算迟到？
+    </view>
+    <view class="late-right">
+        <picker  value="{{index}}" range="{{array}}" bindchange="bindPickerChange">
+            <view class="picker">
+                {{array[index] + min}}
+             </view>
+        </picker>
+    </view>
+</view>
+
+<view class="place">
+    <view class="place-left">
+        签到地点：
+    </view>
+    <image src="/images/icon/place.png" class="circle"></image>
+    <view class="map" bindtap="choseLocation" >
+        {{place_name}}
+    </view>
+</view>
+
+<view class="information">
+    <view class="information-left">
+        请选择需要参与者填写的报名信息：
+    </view>
+</view>
+
+<view class="chose">
+
+    <view class="{{css1}}" bindtap="changeCss1" data-name="xingming">
+        姓名
+    </view>
+    <view class="{{css2}}" bindtap="changeCss2"  data-name="phone">
+        手机号
+    </view>
+    <view class="{{css3}}" bindtap="changeCss3">
+        <input  placeholder="自定义" placeholder-class="q" bindblur="change3" />
+    </view>
+    <view class="{{css4}}" bindtap="changeCss4"  >
+        <input  placeholder="自定义" placeholder-class="q" bindblur="change4" />
+    </view>
+    <view class="{{css5}}" bindtap="changeCss5"  >
+        <input  placeholder="自定义" placeholder-class="q" bindblur="change5"/>
+    </view>
+    <view class="{{aa}}" hover-class="hover" hover-stay-time="100" bindtap="confirm">
+        确定
+    </view>
+</view>
+
+<view class="add-info">
+    <view class="add-info-left">
+        备注:
+    </view>
+    <view class="add-info-right">
+        <input placeholder="记得带笔" name="add" maxlength="18" placeholder-style="color:#BBB;"/>
+    </view>
+</view>
+
+
+<view class="create">
+    <button type="primary" disabled='{{disable}}' formType="submit">创建签到</button>
+</view>
+
+</form>

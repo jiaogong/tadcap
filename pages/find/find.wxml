@@ -1,0 +1,41 @@
+<form bindsubmit="formsubmit">
+<view class="ss">
+    <icon type="search" size="15"/>
+    <input type="number"  confirm-type="search" name="id" maxlength="10" placeholder="输入签到项目ID" placeholder-class="place"/>
+</view>
+<button class="search" hover-class="hover-search" formType="submit" >搜索</button>
+</form>
+
+<view class="scan">
+    <image src="/images/icon/scan.png" bindtap="scancode"></image>
+</view>
+
+<view class="history">
+    <text>快速访问</text>
+</view>
+
+<view class='block'></view>
+
+<block wx:for="{{data_list}}" wx:key="item">
+    <view class="oldlist" bindtap="shock" hover-class="hover" hover-stay-time="100" data-id="{{item.projectId}}">
+    <view class='name'>
+        <image src='{{item.hasUsed}}' class='dian'></image>
+        {{item.projectName}}
+        <image src='/images/icon/right.png' class='right'></image>
+    </view>
+
+    
+    </view>
+</block>
+
+<view class="tip" wx:if="{{tips}}">
+    <image src="/images/icon/kong.png" style="width:128rpx;height:128rpx;"></image>
+    <view class="l">
+        你还没有创建过签到
+    </view>
+    <view class="r">
+        创建的签到会显示在这里
+    </view>
+</view>
+
+

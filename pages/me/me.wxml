@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="userinfo">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+</view>
+
+<view class="me" hover-class="mebtn" hover-stay-time="100">
+    <view bindtap="jump5" class="font" > 发起签到<image src="/images/icon/right.png" class="dui"></image></view>
+</view>
+
+<view class="block"></view>
+
+<view class="mid" hover-class="mebtn" hover-stay-time="100">
+    <view bindtap="jump1" class="font" data-postName="1"> 我发起的签到<image src="/images/icon/right.png" class="dui"></image></view>
+</view>
+
+<view class="me" hover-class="mebtn" hover-stay-time="100">
+   <view bindtap="jump2" class="font"> 我参与的签到<image src="/images/icon/right.png" class="dui"></image></view>
+</view>
+
+<view class="block"></view>
+
+<view class="mid" hover-class="mebtn" hover-stay-time="100">
+    <view bindtap="jump3" class="font" > 使用说明<image src="/images/icon/right.png" class="dui"></image></view>
+</view>
+
+<view class="me" hover-class="mebtn" hover-stay-time="100">
+    <view bindtap="jump4" class="font"> 联系我们<image src="/images/icon/right.png" class="dui"></image></view>
+</view>
+

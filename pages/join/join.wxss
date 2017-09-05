@@ -1,0 +1,137 @@
+/* pages/join/join.wxss */
+.publish{
+    width: 500rpx;
+    margin-left: 125rpx;
+    margin-top: 300rpx;
+    text-align: center;
+}
+
+.publish image{
+    width: 128rpx;
+    height: 128rpx;
+}
+
+.hide{
+    display: none;
+}
+
+.a{
+     color: #707070;
+}
+.b{
+    margin-top: 12rpx;
+    color: #707070;
+}
+
+.btn{
+    width: 80rpx;
+    height: 80rpx;
+    position: fixed;
+    right: 36rpx;
+    bottom: 36rpx;
+}
+
+.publish{
+    width: 500rpx;
+    margin-left: 125rpx;
+    margin-top: 300rpx;
+    text-align: center;
+}
+
+.publish image{
+    width: 250rpx;
+    height: 250rpx;
+}
+
+.a{
+     color: #707070;
+}
+.b{
+    margin-top: 12rpx;
+    color: #707070;
+}
+
+.container{
+    height: 200rpx;
+    background-color: #fff;
+    margin-top: 30rpx;
+}
+.hover{
+    background-color: rgb(247,247,250);
+}
+.top-left{
+    position: absolute;
+    left: 33rpx;
+    margin-top: 30rpx;
+    color: #fff;
+    font-size: 20rpx;
+    width: 75rpx;
+    height: 35rpx;
+    background-color: #04BE02;
+    border-radius: 3px;
+    padding-left: 15rpx;
+    padding-top: 4rpx;
+}
+.top-le{
+    position: absolute;
+    left: 33rpx;
+    margin-top: 30rpx;
+    color: #fff;
+    font-size: 20rpx;
+    width: 75rpx;
+    height: 35rpx;
+    background-color: #9A9A9A;
+    border-radius: 3px;
+    padding-left: 15rpx;
+    padding-top: 4rpx;
+}
+
+.name{
+    position: absolute;
+    left: 142rpx;
+    margin-top: 26rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #555555;
+}
+
+.right{
+    position: absolute;
+    padding-top: 65rpx;
+    right: 50rpx;
+    width: 66rpx;
+    height: 66rpx;
+}
+
+.time{
+
+}
+.time image{
+    width: 30rpx;
+    height: 30rpx;
+    margin-top: 145rpx;
+    position: absolute;
+    left: 33rpx;
+}
+.time text{
+    font-size: 26rpx;
+    color: #777;
+    position: absolute;
+    left: 70rpx;
+    margin-top: 141rpx;
+}
+
+.user image{
+    width: 28rpx;
+    height: 28rpx;
+    margin-top: 105rpx;
+    position: absolute;
+    left: 35rpx;
+}
+.user text{
+    font-size: 26rpx;
+    color: #777;
+    position: absolute;
+    left: 70rpx;
+    margin-top: 100rpx;
+}

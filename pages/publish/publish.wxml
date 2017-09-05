@@ -1,0 +1,31 @@
+ <image src="/images/icon/plus.png" class="btn" bindtap="jump"></image>
+
+<view wx:if="{{tips}}" class="publish">
+    <image src="/images/icon/kong.png"></image>
+    <view class="a">你还没有发起过签到</view>
+    <view class="b">点击右下角创建一个吧</view>
+</view>
+
+
+<block wx:for="{{data_list}}" wx:key="item">
+    <view class='container' hover-class="hover"  hover-stay-time="100" bindtap="simple" data-id="{{item.projectId}}" >
+        <view class='{{item.hasUsed}}'>
+            {{item.endTime}}
+        </view>
+        <view class="name">
+            {{item.projectName}}
+        </view>
+    <image src='{{item.theCreator}}' class='right'></image>
+    <view class='user'>
+        <image src='/images/icon/id.png'></image>
+        <text>{{item.projectId}}</text>
+    </view>
+
+    <view class='time'>
+        <image src='/images/icon/tim.png'></image>
+        <text>{{item.startTime}}</text>
+    </view>
+    </view>
+
+</block>
+

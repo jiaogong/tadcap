@@ -1,0 +1,76 @@
+<view class="white">
+    <view class="name">
+        {{vue.projectName}}
+    </view>
+
+    <view class="shouldnot">
+        <view class="shouldnotnum">
+            <text>{{vue.shouldComeNum-vue.comeNum}}</text>
+        </view>
+        <view class="shouldnotdao">
+            <text>未到人数</text>
+        </view>
+    </view>
+    <view class="allnum"><text>应到人数 </text><text class="all-">{{vue.shouldComeNum}}</text></view>
+    <view class="realum"><text>实到人数 </text><text class="real-">{{vue.comeNum}}</text></view>
+</view>
+
+
+    <image src='/images/icon/project.png' class='change' bindtap='preview'></image>
+
+
+<view class='cut'>未到成员列表</view>
+
+<view class='block'></view>
+
+<block wx:for='{{data_list}}' wx:key='item'>
+    <view class='list' hover-class="hover" hover-stay-time="100"  bindtap="powerDrawer" data-statu="open">
+        <view class='nocom'>
+        <image src='/images/icon/lv1.png' class='lv'></image>
+        {{item.name}}
+                <image src='/images/icon/delete.png' class='delete' catchtap='cut'></image>
+        </view>
+
+    </view>
+</block>
+
+<!-- 12///////////////////////////////////////////////////////////////////// -->
+<!-- <view class="btn" bindtap="powerDrawer" data-statu="open">button</view>   -->
+  
+<!--mask-->  
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>  
+<!--content-->  
+<!--使用animation属性指定需要执行的动画-->  
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">  
+  
+  <!--drawer content-->  
+  <view class="drawer_title">个人信息</view>  
+
+  <view class="drawer_content">  
+
+    <view class="top grid">  
+      <label class="title col-0">标题</label>  
+      <input class="input_base input_h30 col-1" name="rName" value="可自行定义内容"></input>  
+    </view>  
+    <view class="top grid">  
+      <label class="title col-0">标题</label>  
+      <input class="input_base input_h30 col-1" name="mobile" value="110"></input>  
+    </view>  
+    <view class="top grid">  
+      <label class="title col-0">标题</label>  
+      <input class="input_base input_h30 col-1" name="phone" value="拒绝伸手党"></input>  
+    </view>  
+    <view class="top grid">  
+      <label class="title col-0">标题</label>  
+      <input class="input_base input_h30 col-1" name="Email" value="仅供学习使用"></input>  
+    </view>
+
+    <view class="top bottom grid">  
+      <label class="title col-0">备注</label>  
+      <input class="input_base input_h30 col-1" name="bz"></input>  
+    </view>  
+
+
+  </view>  
+  <view class="btn_ok" bindtap="powerDrawer" data-statu="close">关闭</view>  
+</view>  

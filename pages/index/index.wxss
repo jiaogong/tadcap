@@ -1,0 +1,50 @@
+/**index.wxss**/
+
+
+.photo{
+    width: 750rpx;
+    height: auto;
+    text-align: center;
+}
+
+.photo image{
+    width: 640rpx;
+    height: 640rpx;
+    margin-top: 187rpx;
+}
+
+.bt{
+    background-image: url(http://image.jiantuku.com/17-7-9/57155660.jpg?imageView2/1/w/200/h/200&e=1499533210&token=el7kgPgYzpJoB23jrChWJ2gV3HpRl0VCzFn8rKKv:CjfCjDhQlM5S--TkAps55ukNPg8=);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+    
+.btnn{
+     
+    width: 750rpx;
+    height: 750rpx;
+     text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200rpx;
+  margin-bottom: 100rpx;
+}
+
+.btn image{
+    width: 640rpx;
+    height: 640rpx;
+}
+
+.btn text{
+    color: #888888;
+}
+
+.tex{
+    margin-top: 50rpx;
+}

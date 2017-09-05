@@ -1,0 +1,68 @@
+<view class="container">
+    <view class="block"></view>
+    <view class="name">{{vue.projectName}}</view>
+
+    <view class="contain">
+
+    <view class="time">
+        <view class="c">
+            <image src='/images/icon/time.png' ></image>
+        </view>
+        <view class="ti">{{time}}</view>
+    </view>
+
+    <view class="place-name">
+        <view class="n">
+            <image src='/images/icon/place.png' ></image>
+        </view>
+    <view class="place-nam">////////////</view>
+    </view>
+
+    <view class="place-address">
+        <view class="m">
+            <image src="/images/icon/plpl.png" ></image>
+        </view>
+    <view class="place-addres">sdsadasdasd</view>
+    </view>
+    
+    </view>
+     
+
+</view>
+
+<view class="id">
+    项目ID：{{vue.projectId}}
+    <view class="id-bootom">
+        可通过搜索项目ID号报名
+    </view>
+</view>
+
+<!-- <view class="line"></view> -->
+
+
+<view class="share">
+    <button bindtap="share" type="primary" data-id="{{vue.projectId}}">邀请好友报名</button>
+    <view class="block-share"></view>
+    <text>发送到需要报名的群聊或者好友</text>
+</view>
+
+<!-- <view class="id">
+    项目ID：{{vue.projectId}}
+    <view class="id-bootom">
+        可通过搜索项目ID号报名
+    </view>
+</view>
+
+<view class="line"></view> -->
+
+<!-- <view class="data" bindtap="change" hover-class="hover" hover-stay-time="100">
+     <view class="should">应到人数：{{vue.shouldComeNum}}人</view>
+     <view class="real">实到人数：{{vue.comeNum}}人</view>
+     <view class="more">未到人数：{{vue.shouldComeNum-vue.comeNum}}人</view>
+</view>
+
+<view class="aa">点击查看详情</view> -->
+
+<view class="del-btn">
+    <button  bindtap="dell" data-id="{{vue.projectId}}" class="bbtn">删除签到</button>
+</view>

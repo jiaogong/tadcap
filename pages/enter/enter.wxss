@@ -1,0 +1,52 @@
+/* pages/enter/enter.wxss */
+.container{
+    width: 550rpx;
+    margin-left: 100rpx;
+}
+
+.answer{
+    border-style: solid;
+    border-color: #D7D7D7;
+    border-width: 1px;
+    margin-top: 12rpx;
+    height: 70rpx;
+}
+.answer input{
+    padding-top: 14rpx;
+    padding-left: 18rpx;
+}
+
+.name{
+    text-align: center;
+    font-size: 48rpx;
+    height: 150rpx;
+    color: #000;
+    font-weight: bold;
+}
+.block-top{
+    height: 70rpx;
+}
+
+.line{
+    width: 550rpx;
+    height: 1px;
+    background-color: #D7D7D7;
+    margin-top: 24rpx;
+    margin-bottom: 60rpx;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ask{
+    color: #555;
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-top: 25rpx;
+}
+
+.btn{
+    margin-top: 60rpx;
+    width: 550rpx;
+    margin-left: auto;
+    margin-right: auto;
+}

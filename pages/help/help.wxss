@@ -1,0 +1,18 @@
+.topic{
+    font-size: 50rpx;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 45rpx;
+}
+
+.ask{
+    width: 650rpx;
+    margin: 45rpx auto 0 auto;
+    color: #333;
+    font-weight: bold;
+}
+.answer{
+    width: 600rpx;
+    margin: 20rpx auto 0 auto;
+    color: #333;
+}

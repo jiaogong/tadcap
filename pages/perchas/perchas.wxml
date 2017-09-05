@@ -1,0 +1,24 @@
+<view class="container">
+    <view class="block"></view>
+    <view class="name">编译原理</view>
+     <image src="/images/icon/tim.png" class="tim"></image> 
+    <view class="time">
+        2017-1-1 10:00 至 2018-1-1 10:00
+    </view>
+    <image src="/images/icon/place.png" class="place"></image>
+    <view class="placename">
+        港汇恒隆广场
+    </view>
+    <image src="/images/icon/plpl.png" class="plpl"></image>
+    <view class="placeaddress">
+        上海徐家汇港汇恒隆广场
+    </view>
+</view>
+
+<view class="share">
+    <button bindtap="share" type="primary" disabled="true">邀请好友报名</button>
+</view>
+
+<view class="obj">
+    
+</view>
