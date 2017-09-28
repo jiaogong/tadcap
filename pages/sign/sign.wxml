@@ -49,9 +49,16 @@
         签到地点：
     </view>
     <image src="/images/icon/place.png" class="circle"></image>
-    <view class="map" bindtap="choseLocation" >
+    <view class="map" bindtap="choseLocation" style='color:#555'>
         {{place_name}}
     </view>
+</view>
+
+<view class="place" bindtap='check'>
+    <view class="place-left">
+        启用扫码签到以提高准确性
+    </view>
+    <image src="{{rad}}" class="rad" ></image>
 </view>
 
 <view class="information">

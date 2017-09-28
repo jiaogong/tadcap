@@ -28,7 +28,7 @@ Page({
     },
     jump4: function () {
         wx.navigateTo({
-            url: '/pages/us/us',
+            url: '/pages/qrcode/qrcode',
         })
     },
     jump5: function () {

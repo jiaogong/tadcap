@@ -1,0 +1,14 @@
+<view class="top">
+<view class='block'></view>
+    <text class='name'>高等数学</text>
+</view>
+
+<view class='place'>签 到 处</view>
+
+<view class='mid'>
+     <image src="{{qrcode}}" class="qrcode"></image> 
+</view>
+
+<view class='bootom'>小程序 | 蝌蚪签到 提供技术支持</view>
+
+

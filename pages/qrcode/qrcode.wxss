@@ -1,0 +1,52 @@
+page{
+    background-color: #04BE02;
+}
+
+.top{
+    height: 200rpx;
+    width: 750rpx;
+    background-color: #F5F5F5;
+    text-align: center;
+}
+
+.mid{
+    width: 600rpx;
+    height: 600rpx;
+    background-color: #FFF;
+    margin: 50rpx auto auto auto;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.qrcode{
+    width: 500rpx;
+    height: 500rpx;
+    margin: 50rpx 50rpx 50rpx 50rpx;
+}
+
+.place{
+    color: #FFF;
+    font-size: 66rpx;
+    text-align: center;
+    margin-top: 50rpx;
+    font-weight: bold;
+}
+
+.name{
+    padding-top: 120rpx;
+    text-align: center;
+    font-weight: bold;
+    font-size: 75rpx;
+}
+
+.bootom{
+    margin-top: 60rpx;
+    text-align: center;
+    color: #FFF;
+    font-size: 28rpx;
+}
+
+.block{
+    width: 750rpx;
+    height: 40rpx;
+}

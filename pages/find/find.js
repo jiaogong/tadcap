@@ -1,14 +1,14 @@
 //logs.js
 var app = getApp()
 var util = require('../../utils/util.js')
+
 Page({
     data: {
         projectId: 0,
         projectName: '',
         has_used: 0,
         tips:true,
-        data_list: [],
-
+        data_list: []
     },
 
 //搜索项目ID函数
@@ -134,5 +134,6 @@ formsubmit:function(res){
     },
     onShow: function () {
         this.onLoad()
+        
     },
 })

@@ -1,10 +1,10 @@
 .name{
     height: 90rpx;
     background-color: #fff;
-     border-style: solid;
+    border-style: solid;
     border-width: 1px;
     border-color: #F5F5F5; 
-    margin-top: 45rpx;
+    margin-top: 10rpx;
 }
 .name-left{
     float: left;
@@ -23,7 +23,7 @@
     border-style: solid;
     border-width: 1px;
     border-color: #F5F5F5;
-    margin-top: 45rpx;
+    margin-top: 35rpx;
 }
 .time-left{
     margin-top: 23rpx;
@@ -33,12 +33,12 @@
 }
 .time-mid{
     position: absolute;
-    top: 209rpx;
+    top: 164rpx;
     left: 250rpx;
 }
 .time-right{
     position: absolute;
-    top: 209rpx;
+    top: 164rpx;
     left: 580rpx;
 }
 .line{
@@ -48,7 +48,7 @@
     border-width: 0 0 0 2px;
     border-color: #C2C2C2;
     position: absolute;
-    top: 209rpx;
+    top: 164rpx;
     left: 510rpx;
 }
 
@@ -58,7 +58,7 @@
     border-style: solid;
     border-width: 1px;
     border-color: #F5F5F5;
-    margin-top: 45rpx;
+    margin-top: 35rpx;
 }
 .place-left{
     float: left;
@@ -69,14 +69,21 @@
 }
 .circle{
     position: absolute;
-    top: 440rpx;
+    top: 388rpx;
     left: 230rpx;
+    width: 36rpx;
+    height: 36rpx;
+}
+.rad{
+    position: absolute;
+    top: 516rpx;
+    right: 70rpx;
     width: 36rpx;
     height: 36rpx;
 }
 .map{
     position: absolute;
-    top: 410rpx;
+    top: 359rpx;
     left: 277rpx;
     height: 90rpx;
     padding-top: 27rpx;
@@ -102,7 +109,7 @@
 }
 .late-right{
     position: absolute;
-    top: 300rpx;
+    top: 255rpx;
     right: 120rpx;
 }
 
@@ -112,7 +119,7 @@
     border-style: solid;
     border-width: 1px 0 0 0;
     border-color: #F5F5F5;
-    margin-top: 45rpx;
+    margin-top: 35rpx;
 }
 .information-left{
     float: left;
@@ -204,7 +211,7 @@
     border-style: solid;
     border-width: 1px 0 0 0;
     border-color: #F5F5F5;
-    margin-top: 45rpx;
+    margin-top: 35rpx;
 }
 .add-info-left{
     float: left;

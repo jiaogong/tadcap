@@ -37,11 +37,29 @@ Page({
       count2: 0,
       count3: 0,
       count4: 0,
-      count5: 0
+      count5: 0,
+      rad:'/images/icon/check1.png',
+      qrflag:0
   },
 
 
-
+check:function(){
+    var that = this
+    if (that.data.rad == '/images/icon/check1.png'){
+        that.setData({
+            rad: '/images/icon/check2.png',
+            qrflag:1
+            //启用二维码签到
+        })
+    }
+    else{
+        that.setData({
+            rad: '/images/icon/check1.png',
+            qrflag: 0
+            //不启用二维码签到
+        })
+    }
+},
 
 
 
