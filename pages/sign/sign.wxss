@@ -64,6 +64,7 @@
     float: left;
     margin-top: 23rpx;
     margin-left: 18rpx;
+    margin-right: 15rpx;
     font-weight: bold;
     color: #555;
 }
@@ -78,6 +79,16 @@
     position: absolute;
     top: 516rpx;
     right: 70rpx;
+    width: 36rpx;
+    height: 36rpx;
+}
+.qa{
+    /* position: absolute;
+    top: 516rpx;
+    left:335rpx; */
+    margin: 26rpx 0 0 75rpx;
+}
+.qa image{
     width: 36rpx;
     height: 36rpx;
 }
@@ -265,4 +276,100 @@
     margin-bottom: 20rpx;
     float: left;
     background-color: #04BE02;
+}
+
+
+/***************复制过来的*******************/
+
+/*button*/  
+.btn {  
+  width: 80%;  
+  padding: 20rpx 0;  
+  border-radius: 10rpx;  
+  text-align: center;  
+  margin: 40rpx 10%;  
+  background: #000;  
+  color: #fff;  
+}  
+  
+/*mask*/  
+.drawer_screen {  
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 1000;  
+  background: #000;  
+  opacity: 0.5;  
+  overflow: hidden;  
+}  
+  
+/*content*/  
+.drawer_box {  
+  width: 500rpx;  
+  overflow: hidden;  
+  position: fixed;  
+  top: 50%;  
+  left: 70rpx;  
+  z-index: 1001;  
+  background: #FAFAFA;  
+  margin: -150px 50rpx 0 50rpx;  
+  border-radius: 3px;  
+}  
+  
+.drawer_title{  
+  padding:15px;  
+  font-size: 32rpx;  
+  text-align: center;  
+}  
+.drawer_content {  
+  height: 400rpx;  
+  margin: 0 45rpx 0 45rpx;    
+
+
+}  
+  
+.btn_ok{  
+  padding: 10px;  
+  font: 20px;  
+  text-align: center;  
+  border-top: 1px solid #E8E8EA;  
+  color: #3CC51F;  
+}  
+  
+.top{  
+    padding-top:8px;  
+}  
+.bottom {  
+    padding-bottom:8px;  
+}  
+.title {  
+    height: 30px;  
+    line-height: 30px;  
+    width: 160rpx;  
+    text-align: center;  
+    display: inline-block;  
+    font: 300 28rpx/30px "microsoft yahei";  
+}  
+  
+
+radio{  
+    margin-right: 20px;  
+}  
+.grid { display: -webkit-box; display: box; }  
+.col-0 {-webkit-box-flex:0;box-flex:0;}  
+.col-1 {-webkit-box-flex:1;box-flex:1;}  
+.fl { float: left;}  
+.fr { float: right;}  
+
+.txt{
+    font-size: 28rpx;
+    color: #555;
+    margin-top: 45rpx;
+}
+
+.blo{
+    width: auto;
+    height: 5rpx;
 }

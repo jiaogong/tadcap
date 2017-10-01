@@ -6,9 +6,12 @@
 <view class='place'>签 到 处</view>
 
 <view class='mid'>
-     <image src="{{qrcode}}" class="qrcode"></image> 
+     <!-- <image src="{{qrcode}}" class="qrcode"></image>  -->
+     <image src="/images/icon/qrcode.jpg" class="qrcode"></image>
 </view>
 
 <view class='bootom'>小程序 | 蝌蚪签到 提供技术支持</view>
+
+
 
 

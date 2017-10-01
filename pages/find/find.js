@@ -43,7 +43,13 @@ formsubmit:function(res){
 
     scancode: function () {
         wx.scanCode({
+            onlyFromCamera: true,
             success: (res) => {
+                if(res.result == '123'){
+                    wx.showToast({
+                        title: '签到成功！',
+                    })
+                }
             }
         })
     },

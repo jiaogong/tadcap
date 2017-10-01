@@ -10,18 +10,18 @@ page{
 }
 
 .mid{
-    width: 600rpx;
-    height: 600rpx;
+    width: 643rpx;
+    height: 702rpx;
     background-color: #FFF;
-    margin: 50rpx auto auto auto;
+    margin: 35rpx auto auto auto;
     border-radius: 3px;
     text-align: center;
 }
 
 .qrcode{
-    width: 500rpx;
-    height: 500rpx;
-    margin: 50rpx 50rpx 50rpx 50rpx;
+    width: 585rpx;
+    height: 666rpx;
+    margin: 30rpx auto 25rpx auto;
 }
 
 .place{
@@ -40,7 +40,7 @@ page{
 }
 
 .bootom{
-    margin-top: 60rpx;
+    margin-top: 40rpx;
     text-align: center;
     color: #FFF;
     font-size: 28rpx;

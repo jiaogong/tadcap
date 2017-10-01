@@ -38,7 +38,7 @@
                 "selectedIconPath": "images/icon/a.png"
             },
             {
-                "pagePath": "pages/me/me",
+                "pagePath": "pages/find/find",
                 "text": "发现",
                 "iconPath": "images/icon/22.png",
                 "selectedIconPath": "images/icon/b.png"

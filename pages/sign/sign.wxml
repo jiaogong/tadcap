@@ -4,7 +4,7 @@
         活动名称：
     </view>
     <view class="name-right">
-        <input maxlength="10" focus="true" name="ProjectName"/>
+        <input maxlength="10"  name="ProjectName"/>
     </view>
 </view>
 
@@ -14,7 +14,7 @@
     </view>
     <view class="time-mid">
         <picker mode="date" value="{{date}}" start="{{date}}" end="2018-12-31" bindchange="bindDateChange" name="StartTimeDay">
-             <view class="picker">
+             <view class="picker" style='color:#555'>
                   {{date}}
             </view>
         </picker>
@@ -24,7 +24,7 @@
 
     <view class="time-right">
         <picker mode="time" value="{{time}}"  bindchange="bindTimeChange" name="StartTimeHour">
-            <view class="picker">
+            <view class="picker" style='color:#555'>
                     {{time}}
             </view>
         </picker>
@@ -37,7 +37,7 @@
     </view>
     <view class="late-right">
         <picker  value="{{index}}" range="{{array}}" bindchange="bindPickerChange">
-            <view class="picker">
+            <view class="picker" style='color:#555'>
                 {{array[index] + min}}
              </view>
         </picker>
@@ -54,11 +54,12 @@
     </view>
 </view>
 
-<view class="place" bindtap='check'>
+<view class="place">
     <view class="place-left">
-        启用扫码签到以提高准确性
+        开启扫码签到模式
     </view>
-    <image src="{{rad}}" class="rad" ></image>
+    <view class="qa"><image src="/images/icon/question.png"  bindtap='powerDrawer' data-statu="open"></image></view>
+    <image src="{{rad}}" class="rad" bindtap='check'></image>
 </view>
 
 <view class="information">
@@ -104,3 +105,26 @@
 </view>
 
 </form>
+
+
+
+<!--mask-->  
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>  
+<!--content-->  
+<!--使用animation属性指定需要执行的动画-->  
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">  
+  
+  <!--drawer content-->  
+  <!-- <view class="drawer_title">什么是扫码签到？</view>   -->
+
+  <view class="drawer_content">  
+
+      <view class='txt'>启用后需在签到现场放置签到二维码，参与者扫码后方可完成签到。精度高，速度慢，适用于对签到准确性要求很高的活动。
+      </view>  
+      <view class='blo'></view>
+      <view class='txt'>不启用则使用默认的定位签到。存在一定的误差但速度极快，无需任何配置，适用于人数较多场面混乱的户外签到。</view>
+
+
+  </view>  
+  <view class="btn_ok" bindtap="powerDrawer" data-statu="close">关闭</view>  
+</view>  
