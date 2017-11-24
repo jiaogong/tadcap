@@ -1,6 +1,6 @@
 <view class="container">
     <view class="block"></view>
-    <view class="name">{{vue.projectName}}</view>
+    <view class="name">{{vue.project_name}}</view>
      <!-- <image src="/images/icon/tim.png" class="tim"></image> 
     <view class="time">
         {{time}}
@@ -26,14 +26,14 @@
         <view class="n">
             <image src='/images/icon/place.png' ></image>
         </view>
-    <view class="place-nam">////////////</view>
+    <view class="place-nam">{{vue.place_name}}</view>
     </view>
 
     <view class="place-address">
         <view class="m">
             <image src="/images/icon/plpl.png" ></image>
         </view>
-    <view class="place-addres">sdsadasdasd</view>
+    <view class="place-addres">{{vue.place_address}}</view>
     </view>
     
     </view>

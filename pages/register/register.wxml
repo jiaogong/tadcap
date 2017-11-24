@@ -1,18 +1,18 @@
 <view class="white">
     <view class="name">
-        {{vue.projectName}}
+        {{vue.project_name}}
     </view>
 
     <view class="shouldnot">
         <view class="shouldnotnum">
-            <text>{{vue.shouldComeNum-vue.comeNum}}</text>
+            <text>{{pip.length}}</text>
         </view>
         <view class="shouldnotdao">
             <text>未到人数</text>
         </view>
     </view>
-    <view class="allnum"><text>应到人数 </text><text class="all-">{{vue.shouldComeNum}}</text></view>
-    <view class="realum"><text>实到人数 </text><text class="real-">{{vue.comeNum}}</text></view>
+    <view class="allnum"><text>应到人数 </text><text class="all-">{{npm.length}}</text></view>
+    <view class="realum"><text>实到人数 </text><text class="real-">{{npm.length-pip.length}}</text></view>
 </view>
 
 
@@ -27,7 +27,7 @@
     <view class='list' hover-class="hover" hover-stay-time="100"  bindtap="powerDrawer" data-statu="open">
         <view class='nocom'>
         <image src='/images/icon/lv1.png' class='lv'></image>
-        {{item.name}}
+        {{item.diyValue1}}
                 <image src='/images/icon/delete.png' class='delete' catchtap='cut'></image>
         </view>
 

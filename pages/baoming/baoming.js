@@ -14,7 +14,7 @@ Page({
         var that = this
         var iid = that.data.id
         wx.request({
-            url: 'http://115.159.22.122/KeDou/statistics/insertStatistics',
+            url: 'https://tadcap.com/signUp',
             data: {
                 projectId: that.data.id,
                 userId: app.globalData.userId,
@@ -59,34 +59,27 @@ Page({
         })
         ///
         wx.request({
-            url: 'http://115.159.22.122/KeDou/project/getProjectByProjectId',
-            data: {
-                projectId: project_id
-            },
-            method: 'POST',
-            header: {
-                'content-type': 'application/x-www-form-urlencoded'
-            },
+            url: 'https://tadcap.com/getProjectInfo?projectId=' + project_id,
             success: function (res) {
                 var dataList = []
-                if (res.data.result.diyName1 == '姓名') {
-                    dataList.push(res.data.result.diyName1)
+                if (res.data.diy_name1 == '姓名') {
+                    dataList.push(res.data.diy_name1)
                 }
-                if (res.data.result.diyName2 == '手机号') {
-                    dataList.push(res.data.result.diyName2)
+                if (res.data.diy_name2 == '手机号') {
+                    dataList.push(res.data.diy_name2)
                 }
-                if (res.data.result.diyName3 != '自定义' && res.data.result.diyName3 != '未选中') {
-                    dataList.push(res.data.result.diyName3)
+                if (res.data.diy_name3 != '自定义' && res.data.diy_name3 != '未选中') {
+                    dataList.push(res.data.diy_name3)
                 }
-                if (res.data.result.diyName3 != '自定义' && res.data.result.diyName3 != '未选中') {
-                    dataList.push(res.data.result.diyName4)
+                if (res.data.diy_name4 != '自定义' && res.data.diy_name4 != '未选中') {
+                    dataList.push(res.data.diy_name4)
                 }
-                if (res.data.result.diyName3 != '自定义' && res.data.result.diyName3 != '未选中') {
-                    dataList.push(res.data.result.diyName5)
+                if (res.data.diy_name5 != '自定义' && res.data.diy_name5 != '未选中') {
+                    dataList.push(res.data.diy_name5)
                 }
                 that.setData({
                     data_list: dataList,
-                    project_name: res.data.result.projectName
+                    project_name: res.data.project_name
                 })
                 console.log(dataList)
                 console.log(66666)

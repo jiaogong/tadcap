@@ -17,17 +17,10 @@ Page({
     var that = this
     //////////渲染加入的签到列表
     wx.request({
-        url: 'http://115.159.22.122/KeDou/project/getProjectJoinIn',
-        data: {
-            userId: app.globalData.userId
-        },
-        method: 'POST',
-        header: {
-            'content-type': 'application/x-www-form-urlencoded'
-        },
+        url: 'https://tadcap.com/getUserJoinProject?userId=' + app.globalData.userId,
         success: function (res) {
-            var key = String(res.data.code)
-            if (key.charAt(key.length - 1) != 1) {
+            console.log(res);
+            if (res.data.length === 0 || res.statusCode != 200) {
                 that.setData({
                     tips: true
                 })
@@ -36,23 +29,22 @@ Page({
                 //帅极了的模块，处理时间
                 ///////////////
                 //////////////////
-                var a = res.data.resultList
+                var a = res.data
                 var j = a.length
-                console.log('999999999999' + res.data)
                 console.log(a.length)
                 var timestamp = Date.parse(new Date());
                 for (let i = 0; i < j; i++) {
-                    console.log('第' + i + '个结束时间时间戳' + a[i].endTime)
-                    a[i].startTime = utils.formatTime(new Date(a[i].startTime))
-                    if (timestamp > a[i].endTime) {
-                        a[i].endTime = '已结束'
-                        a[i].hasUsed = 'top-le'
-                        a[i].theCreator = '/images/icon/ent.png'
+                    a[i].start_time = new Date(parseInt(a[i].start_time) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
+                    
+                    if (timestamp > a[i].end_time) {
+                        a[i].end_time = '已结束'
+                        a[i].flag = 'top-le'
+                        a[i].creator = '/images/icon/ent.png'
                     }
                     else {
-                        a[i].endTime = '进行中'
-                        a[i].hasUsed = 'top-left'
-                        a[i].theCreator = '/images/icon/enter.png'
+                        a[i].end_time = '进行中'
+                        a[i].flag = 'top-left'
+                        a[i].creator = '/images/icon/enter.png'
                     }
                 }
                 var dataList = a.reverse()

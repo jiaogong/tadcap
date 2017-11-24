@@ -21,21 +21,21 @@
         <view class="n">
             <image src='/images/icon/place.png' ></image>
         </view>
-    <view class="place-nam">////////////</view>
+    <view class="place-nam">{{vue.place_name}}</view>
     </view>
 
     <view class="place-address">
         <view class="m">
             <image src="/images/icon/plpl.png" ></image>
         </view>
-    <view class="place-addres">sdsadasdasd</view>
+    <view class="place-addres">{{vue.place_address}}</view>
     </view>
     
     </view>
 </view>
 
 
-<button class='now' type='primary' bindtap="enter" data-id="{{vue.projectId}}">立即报名</button>
+<button class='now' type='primary' bindtap="enter" data-id="{{vue.project_id}}">立即报名</button>
 
 
 <view class="people-num">- 还有{{num}}人也参加了这次签到 -</view>

@@ -2,7 +2,10 @@ var app = getApp()
 Page({
     data: {
     data_list:[],
-    vue:{}
+    vue:{},
+    npm:{},
+    pip:{},
+    pid:null
 
     },
 
@@ -22,39 +25,39 @@ cut:function(){
     onLoad: function (options) {
         var id = options.id
         var that = this;
+        that.setData({
+            pid:id
+        });
         wx.request({
-            url: 'http://115.159.22.122/KeDou/project/getProjectByProjectId',
-            data: {
-                    projectId:id
-            },
-            method: 'POST',
-            header: {
-                'content-type': 'application/x-www-form-urlencoded'
-            },
+            url: 'https://tadcap.com/getProjectInfo?projectId=' + id,
             success: function (res) {
                 console.log(res)
                 that.setData({
-                    vue:res.data.result
+                    vue:res.data
                 })
             }
         })
         /////
         wx.request({
-            url: 'http://115.159.22.122/KeDou/user/getJoinerOfProject',
-            data: {
-                projectId: id,
-            },
-            method: 'POST',
-            header: {
-                'content-type': 'application/x-www-form-urlencoded'
-            },
+            url: 'https://tadcap.com/getJoinerInfo?projectId=' + id,
             success: function (res) {
                 console.log(res)
-                // that.setData({
-                //     vue: res.data.result
-                // })
+                that.setData({
+                    npm: res.data
+                })
             }
         })
+
+        wx.request({
+            url: 'https://tadcap.com/unSign?projectId=' + id,
+            success: function (res) {
+                console.log(res)
+                that.setData({
+                    pip: res.data
+                });
+            }
+        })
+        
     },
 
     /**
@@ -68,7 +71,8 @@ cut:function(){
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        let that = this;
+        
     },
 
     /**

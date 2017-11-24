@@ -26,14 +26,7 @@ share:function(event){
                 if(e.confirm){
                 var that = this
                 wx.request({
-                    url: 'http://115.159.22.122/KeDou/project/deleteProjectByProjectId',
-                    data: {
-                        projectId:id
-                    },
-                    method: 'POST',
-                    header: {
-                        'content-type': 'application/x-www-form-urlencoded'
-                    },
+                    url: 'https://tadcap.com/delete?projectId=' + id,
                     success: function (res) {
                         wx.showToast({
                             title: '删除成功',
@@ -63,22 +56,14 @@ change:function(){
     var id = options.id
     var that = this
     wx.request({
-        url: 'http://115.159.22.122/KeDou/project/getProjectByProjectId',
-        data: {
-                projectId:id
-        },
-        method: 'POST',
-        header: {
-            'content-type': 'application/x-www-form-urlencoded'
-        },
+        url: 'https://tadcap.com/getProjectInfo?projectId=' + id,
         success: function (res) {
-            // //把时间转化成能看的
-            var begin = res.data.result.startTime
-            var time = utils.formatTime(new Date(begin))
-
-////////////////
+            console.log(res);
+            //把时间转化成能看的
+            var begin = res.data.start_time;
+            var time = new Date(parseInt(begin) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');;
             that.setData({
-                vue:res.data.result,
+                vue:res.data,
                 time:time
             })
         }

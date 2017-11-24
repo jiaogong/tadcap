@@ -280,11 +280,11 @@ check:function(){
         //合并经纬度
             var w = this.data.latitude //weidu
             var q = this.data.longitude
-            w = String(w)
-            q = String(q)
-            q = q + '&'
-            var position = q + w
-            console.log(position)
+            // w = String(w)
+            // q = String(q)
+            // q = q + '&'
+            // var position = q + w
+            // console.log(position)
         //将日期转化成标准格式
         var top = this.data.date
         var x = top.split('-')
@@ -306,6 +306,11 @@ check:function(){
         var shijian = this.data.time
         shijian = shijian + ':00'
         var OOXX = top + shijian
+        //日期转时间戳
+        var timestamp1 = new Date(Date.parse(OOXX.replace(/-/g,"/")))
+        timestamp1 = timestamp1.getTime()/1000
+        console.log('OOXX:' + OOXX)
+        console.log(timestamp1)
         //草泥马的
         //将时间转化为标准格式
         var time = this.data.time
@@ -335,27 +340,37 @@ check:function(){
         }
         time = c + ':' + d + ':00'
         var timeKey = top + time
+        var timestamp2 = new Date(Date.parse(timeKey.replace(/-/g, "/")))
+        timestamp2 = timestamp2.getTime() / 1000
+        console.log('timeKey:' + timeKey)
+        console.log(timestamp2)
         wx.request({
-            url: 'http://115.159.22.122/KeDou/project/createProject',
+            url: 'https://tadcap.com/createProject',
             data: {
                 projectName: e.detail.value.ProjectName,
-                information: '666666666',
                 creator: app.globalData.userId,
-                startTime: OOXX,
-                endTime: timeKey,
-                theLocation: position,
+                startTime: timestamp1,
+                endTime: timestamp2,
+                // theLocation: position,
+                longitude:q,
+                latitude:w,//纬度
                 information: e.detail.value.add,
                 diyName1:them.data.diy1,
                 diyName2: them.data.diy2,
                 diyName3: them.data.diy3,
                 diyName4: them.data.diy4,
-                diyName5: them.data.diy5
+                diyName5: them.data.diy5,
+                qrcode:them.data.qrflag,
+                placeName:them.data.place_name,
+                placeAddress:them.data.place_address
+
             },
             method: 'POST',
             header: {
                 'content-type': 'application/x-www-form-urlencoded'
             },
             success: function (res) {
+                console.log(res)
                 wx.showToast({
                     title: '创建成功',
                     duration: 1000,

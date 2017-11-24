@@ -15,14 +15,10 @@ Page({
 formsubmit:function(res){
     var project_id = res.detail.value.id
     wx.request({
-        url: 'http://115.159.22.122/KeDou/project/getProjectByProjectId?projectId=' + project_id,
+        url: 'https://tadcap.com/getProjectInfo?projectId=' + project_id,
         success:function(res){
-            console.log(res)
-            var arr = res.data.code
-            var key = arr.toString()
-            key = key.charAt(key.length-1)
-            console.log(key)
-            if(key == 1)
+            console.log(res.data);
+            if(res.data.P_ID != null)
             {
                 wx.navigateTo({
                  url: '../search/search?id=' + project_id,
@@ -66,37 +62,27 @@ formsubmit:function(res){
         var that = this;
         //渲染创建的签到列表
         wx.request({
-            url: 'http://115.159.22.122/KeDou/project/getProjectCreatedByUser',
-            data: {
-                    userId:app.globalData.userId
-            },
-            method: 'POST',
-            header: {
-                'content-type': 'application/x-www-form-urlencoded'
-            },
+            url: 'https://tadcap.com/getUserCreatedProject?userId=' + app.globalData.userId,        
             success: function (res) {
-                var key = String(res.data.code)
-                if (key.charAt(key.length - 1) != 1){
+                if (res.data.length === 0){
                     that.setData({
                         tips: true
                     })
                 }
                 else{
-                    var dataList = res.data.resultList
-                    ///////////
-                    var a = res.data.resultList
+                    var dataList = res.data
+                    var a = res.data
                     var j = a.length
                     var timestamp = Date.parse(new Date());
                     for (let i = 0; i < j; i++) {
-                        if (timestamp > a[i].endTime) {
-                            a[i].hasUsed = '/images/icon/gry.png'
+                        if (timestamp > a[i].end_time) {
+                            a[i].creator = '/images/icon/gry.png'
                         }
                         else {
-                            a[i].hasUsed = '/images/icon/green.png'
+                            a[i].creator = '/images/icon/green.png'
                         }
                     }
                     var dataList = a.reverse()
-                    /////////
                     that.setData({
                         //隐藏欢迎提示
                         tips: false,
@@ -105,35 +91,7 @@ formsubmit:function(res){
                 }
             }
         })
-        //////////渲染加入的签到列表
-        // wx.request({
-        //     url: 'http://115.159.22.122/KeDou/project/getProjectJoinIn',
-        //     data: {
-        //         userId: app.globalData.userId
-        //     },
-        //     method: 'POST',
-        //     header: {
-        //         'content-type': 'application/x-www-form-urlencoded'
-        //     },
-        //     success: function (res) {
-        //         if (res.data.reslutList != []) {
-        //             var add = res.data.resultList
-        //             var old = that.data.data_list
 
-        //             var dataList = old.concat(add)
-        //             that.setData({
-        //                 //隐藏欢迎提示
-        //                 tips: false,
-        //                 data_list: dataList
-        //             })
-        //         }
-        //         else {
-        //             that.setData({
-        //                 tips: true
-        //             })
-        //         }
-        //     }
-        // })
     },
     onPullDownRefresh(event){
         setTimeout(wx.stopPullDownRefresh(),2500)

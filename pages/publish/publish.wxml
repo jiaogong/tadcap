@@ -7,23 +7,23 @@
 </view>
 
 
-<block wx:for="{{data_list}}" wx:key="item">
-    <view class='container' hover-class="hover"  hover-stay-time="100" bindtap="simple" data-id="{{item.projectId}}" >
-        <view class='{{item.hasUsed}}'>
+<block wx:for="{{dataList}}" wx:key="item">
+    <view class='container' hover-class="hover"  hover-stay-time="100" bindtap="simple" data-id="{{item.project_id}}" >
+        <view class='{{item.flag}}'>
             {{item.endTime}}
         </view>
         <view class="name">
-            {{item.projectName}}
+            {{item.project_name}}
         </view>
-    <image src='{{item.theCreator}}' class='right'></image>
+    <image src='{{item.creator}}' class='right'></image>
     <view class='user'>
         <image src='/images/icon/id.png'></image>
-        <text>{{item.projectId}}</text>
+        <text>{{item.project_id}}</text>
     </view>
 
     <view class='time'>
         <image src='/images/icon/tim.png'></image>
-        <text>{{item.startTime}}</text>
+        <text>{{item.start_time}}</text>
     </view>
     </view>
 

@@ -22,21 +22,14 @@ baoming:function(){
     var id = options.id
     var that = this
     wx.request({
-        url: 'http://115.159.22.122/KeDou/project/getProjectByProjectId',
-        data: {
-                projectId:id
-        },
-        method: 'POST',
-        header: {
-            'content-type': 'application/x-www-form-urlencoded'
-        },
+        url: 'https://tadcap.com/getProjectInfo?projectId=' + id,
         success: function (res) {
             console.log(res)
-            var time = utils.formatTime(new Date(res.data.result.startTime))
+            var time = new Date(parseInt(res.data.start_time) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
             console.log(time)
             console.log(666)
             that.setData({
-                vue:res.data.result,
+                vue:res.data,
                 time:time,
                 id:id
             })

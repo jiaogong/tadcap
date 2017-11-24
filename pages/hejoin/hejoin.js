@@ -10,8 +10,8 @@ Page({
 
 
     share: function () {
-        wx.navigateTo({
-            url: '../share/share',
+        wx.redirectTo({
+            url: '/pages/join/join',
         })
     },
 
@@ -24,18 +24,11 @@ Page({
         var id = options.id
         var that = this
         wx.request({
-            url: 'http://115.159.22.122/KeDou/project/getProjectByProjectId',
-            data: {
-                projectId: id
-            },
-            method: 'POST',
-            header: {
-                'content-type': 'application/x-www-form-urlencoded'
-            },
+            url: 'https://tadcap.com/getProjectInfo?projectId=' + id,
             success: function (res) {
                 //把时间转化成能看的
-                var begin = res.data.result.startTime
-                var end = res.data.result.endTime
+                var begin = res.data.start_time
+                var end = res.data.end_time
                 var d = new Date(begin)
                 var year = d.getFullYear()
                 var month = d.getMonth() + 1;
@@ -63,7 +56,7 @@ Page({
                 var time = start_time + ' ' + '至' + ' ' + end_time
                 console.log(res)
                 that.setData({
-                    vue: res.data.result,
+                    vue: res.data,
                     time: time
                 })
             }

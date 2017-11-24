@@ -27,21 +27,15 @@ Page({
     var join_id = options.join_id
     var that = this
     wx.request({
-        url: 'http://115.159.22.122/KeDou/project/getProjectByProjectId',
-        data: {
-            projectId: join_id
-        },
-        method: 'POST',
-        header: {
-            'content-type': 'application/x-www-form-urlencoded'
-        },
+        url: 'https://tadcap.com/getProjectInfo?projectId=' + join_id,
         success: function (res) {
             //帅极了的模块，处理时间
             ///////////////
             console.log(99999)
-            var time = utils.formatTime(new Date(res.data.result.startTime))
+            var time = new Date(parseInt(res.data.start_time) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
+            
             that.setData({
-                vue:res.data.result,
+                vue:res.data,
                 time:time,
                 id: join_id
             })

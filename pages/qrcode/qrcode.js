@@ -20,23 +20,7 @@ Page({
 
 
   onShow: function () {
-      var token = 'LHdUegu6FDhVKyWtLyFrkEbvEQlXqJs61VesoaLWa0D_4a2o-pBLA_ZCJDEb1InlcuF1F6ksNqHEb9Q05uU8nqja9d1m6n6eUkC-HzbNEqLzFSpO_ucjP-bY-Mg8zKy1SUPdADAGID'
-      var url = 'https://api.weixin.qq.com/wxa/getwxacode?access_token='+token
-      var that = this
-      //渲染创建的签到列表
-      wx.request({
-          url: 'https://api.weixin.qq.com/wxa/getwxacode?access_token=LHdUegu6FDhVKyWtLyFrkEbvEQlXqJs61VesoaLWa0D_4a2o-pBLA_ZCJDEb1InlcuF1F6ksNqHEb9Q05uU8nqja9d1m6n6eUkC-HzbNEqLzFSpO_ucjP-bY-Mg8zKy1SUPdADAGID',
-          data: {
-              path:'pages/index/index'
-          },
-          method: 'POST',
-          header: {
-              'content-type': 'application/x-www-form-urlencoded'
-          },
-          success: function (res) {
-        console.log(res)
-          }
-      })
+     
   },
 
 

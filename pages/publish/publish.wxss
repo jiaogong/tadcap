@@ -9,13 +9,13 @@
 .publish{
     width: 500rpx;
     margin-left: 125rpx;
-    margin-top: 300rpx;
+    margin-top: 350rpx;
     text-align: center;
 }
 
 .publish image{
-    width: 128rpx;
-    height: 128rpx;
+    width: 150rpx;
+    height: 150rpx;
 }
 
 .a{
@@ -78,9 +78,7 @@
     height: 66rpx;
 }
 
-.time{
 
-}
 .time image{
     width: 30rpx;
     height: 30rpx;

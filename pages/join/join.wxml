@@ -11,22 +11,22 @@
 </view>
 
 <block wx:for="{{data_list}}" wx:key="item">
-    <view class='container' hover-class="hover" hover-stay-time="100" bindtap="change" data-id="{{item.projectId}}">
-        <view class='{{item.hasUsed}}'>
-            <text>{{item.endTime}}</text>
+    <view class='container' hover-class="hover" hover-stay-time="100" bindtap="change" data-id="{{item.project_id}}">
+        <view class='{{item.flag}}'>
+            <text>{{item.end_time}}</text>
         </view>
         <view class="name">
-            <text>{{item.projectName}}</text>
+            <text>{{item.project_name}}</text>
         </view>
     <image src='/images/icon/enter.png' class='right'></image>
     <view class='user'>
         <image src='/images/icon/id.png'></image>
-        <text>{{item.projectId}}</text>
+        <text>{{item.project_id}}</text>
     </view>
 
     <view class='time'>
         <image src='/images/icon/tim.png'></image>
-        <text>{{item.startTime}}</text>
+        <text>{{item.start_time}}</text>
     </view>
     </view>
 

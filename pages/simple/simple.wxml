@@ -1,6 +1,6 @@
 <view class="container">
     <view class="block"></view>
-    <view class="name">{{vue.projectName}}</view>
+    <view class="name">{{vue.project_name}}</view>
 
     <view class="contain">
 
@@ -15,14 +15,14 @@
         <view class="n">
             <image src='/images/icon/place.png' ></image>
         </view>
-    <view class="place-nam">////////////</view>
+    <view class="place-nam">{{vue.place_name}}</view>
     </view>
 
     <view class="place-address">
         <view class="m">
             <image src="/images/icon/plpl.png" ></image>
         </view>
-    <view class="place-addres">sdsadasdasd</view>
+    <view class="place-addres">{{vue.place_address}}</view>
     </view>
     
     </view>
@@ -31,7 +31,7 @@
 </view>
 
 <view class="id">
-    项目ID：{{vue.projectId}}
+    项目ID：{{vue.project_id}}
     <view class="id-bootom">
         可通过搜索项目ID号报名
     </view>
@@ -41,7 +41,7 @@
 
 
 <view class="share">
-    <button bindtap="share" type="primary" data-id="{{vue.projectId}}">邀请好友报名</button>
+    <button bindtap="share" type="primary" data-id="{{vue.project_id}}">邀请好友报名</button>
     <view class="block-share"></view>
     <text>发送到需要报名的群聊或者好友</text>
 </view>
@@ -64,5 +64,5 @@
 <view class="aa">点击查看详情</view> -->
 
 <view class="del-btn">
-    <button  bindtap="dell" data-id="{{vue.projectId}}" class="bbtn">删除签到</button>
+    <button  bindtap="dell" data-id="{{vue.project_id}}" class="bbtn">删除签到</button>
 </view>

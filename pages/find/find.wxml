@@ -17,10 +17,10 @@
 <view class='block'></view>
 
 <block wx:for="{{data_list}}" wx:key="item">
-    <view class="oldlist" bindtap="shock" hover-class="hover" hover-stay-time="100" data-id="{{item.projectId}}">
+    <view class="oldlist" bindtap="shock" hover-class="hover" hover-stay-time="100" data-id="{{item.project_id}}">
     <view class='name'>
-        <image src='{{item.hasUsed}}' class='dian'></image>
-        {{item.projectName}}
+        <image src='{{item.creator}}' class='dian'></image>
+        {{item.project_name}}
         <image src='/images/icon/right.png' class='right'></image>
     </view>
 
