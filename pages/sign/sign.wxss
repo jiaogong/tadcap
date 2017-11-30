@@ -97,7 +97,8 @@
     top: 359rpx;
     left: 277rpx;
     height: 90rpx;
-    padding-top: 27rpx;
+    padding-top: 30rpx;
+    font-size: 28rpx;
 }
 
 .hover{

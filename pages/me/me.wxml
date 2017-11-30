@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="userinfo">
   <view  bindtap="login" class="userinfo">
-    <image class="userinfo-avatar" src="{{avatar}}" background-size="cover"></image>
+    <image class="userinfo-avatar" src="{{avatar}}" ></image>
     <text class="userinfo-nickname">{{nickname}}</text>
   </view>
 </view>
@@ -30,3 +30,5 @@
     <view bindtap="jump5" class="font"> 联系我们<image src="/images/icon/right.png" class="dui"></image></view>
 </view>
 
+
+<!-- <view>{{avatar}}</view> -->

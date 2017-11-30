@@ -1,26 +1,46 @@
 <view class="container">
     <view class="block"></view>
     <view class="name">{{vue.project_name}}</view>
-     <image src="/images/icon/tim.png" class="tim"></image> 
+
+    <view class="contain">
+
     <view class="time">
-        {{time}}
+        <view class="c">
+            <image src='/images/icon/time.png' ></image>
+        </view>
+        <view class="ti">{{time}}</view>
     </view>
-    <image src="/images/icon/place.png" class="place"></image>
-    <view class="placename">
-        {{vue.place_name}}
+
+    <view class="place-name">
+        <view class="n">
+            <image src='/images/icon/place.png' ></image>
+        </view>
+    <view class="place-nam">{{vue.place_name}}</view>
     </view>
-    <image src="/images/icon/plpl.png" class="plpl"></image>
-    <view class="placeaddress">
-        {{vue.place_address}}
+
+    <view class="place-address">
+        <view class="m">
+            <image src="/images/icon/plpl.png" ></image>
+        </view>
+    <view class="place-addres">{{vue.place_address}}</view>
     </view>
+
+    </view>
+     
+</view> 
+
+<view class='info' wx:if="{{infoflag}}">
+    备注：{{vue.information}}
 </view>
 
-<view class="share">
-    <text>查看我参加的签到</text>
-    <view class="block-share"></view>
-    <button bindtap="share" type="primary" >返回</button>
-</view>
+<form bindsubmit="fork" report-submit="true">
+    <view class="share">
+        <text>活动开始前会在微信内提醒您</text>
+        <view class="block-share"></view>
+        <button bindtap="fork" type="primary" disabled='{{buttonflag}}' formType="submit">{{txt}}</button>
+    </view>
+</form>
 
-<view class="obj">
-    
-</view>
+
+
+

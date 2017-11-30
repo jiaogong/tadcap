@@ -1,19 +1,8 @@
 <view class="container">
     <view class="block"></view>
     <view class="name">{{vue.project_name}}</view>
-     <!-- <image src="/images/icon/tim.png" class="tim"></image> 
-    <view class="time">
-        {{time}}
-    </view>
-    <image src="/images/icon/place.png" class="place"></image>
-    <view class="placename">
-        港汇恒隆广场
-    </view>
-    <image src="/images/icon/plpl.png" class="plpl"></image>
-    <view class="placeaddress">
-        上海徐家汇港汇恒隆广场
-    </view> -->
-     <view class="contain">
+
+    <view class="contain">
 
     <view class="time">
         <view class="c">

@@ -1,4 +1,3 @@
-/* pages/myjoin/myjoin.wxss */
 .container{
     height: 350rpx;
     background-color: #FFF;
@@ -38,26 +37,17 @@
     color: #555;
 }
 
-.tim{
-    position: absolute;
-    top: 140rpx;
-    left: 94rpx;
+.placename image{
     width: 30rpx;
     height: 30rpx;
 }
-.place{
-    position: absolute;
-    top: 205rpx;
-    left: 90rpx;
-    width: 36rpx;
-    height: 36rpx;
+.placeaddress image{
+    width: 28rpx;
+    height: 28rpx;
 }
-.plpl{
-    position: absolute;
-    top: 276rpx;
-    left: 95rpx;
-    width: 29rpx;
-    height: 29rpx;
+.time image{
+    width: 28rpx;
+    height: 28rpx;
 }
 
 .share{
@@ -72,4 +62,165 @@
 }
 .block-share{
     height: 25rpx;
+}
+
+.data{
+    width: 400rpx;
+    height: 200rpx;
+    margin: 40rpx auto 0 auto;
+    text-align: center;
+    color: #555;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    border-color: #F6F7F9;
+    background-color: #FFF;
+    font-size: 32rpx;
+}
+.should{
+    margin-top: 25rpx;
+}
+.real{
+    margin-top: 16rpx;
+}
+.more{
+    margin-top: 16rpx;
+}
+
+.help{
+    width: 550rpx;
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
+.title{
+    font-size: 32rpx;
+    text-align: center;
+}
+
+.id{
+    width: 550rpx;
+    margin: 45rpx auto 0 auto;
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+}
+.id-bootom{
+    margin-top: 12rpx;
+    font-size: 32rpx;
+    color: #BBB;
+    font-weight: normal;
+}
+
+.line{
+    height: 1px;
+    width: 450rpx;
+    background-color: #BBB;
+    margin: 50rpx auto 0 auto;
+}
+
+.hover{
+    background-color: #BBB;
+}
+
+.aa{
+    margin: 12rpx auto 0 auto;
+    font-size: 32rpx;
+    color: #BBB;
+    text-align: center;
+}
+
+.bbtn{
+    width: 200rpx;
+    height: 70rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.del-btn{
+    width: 550rpx;
+    margin: 350rpx auto 0 auto;
+}
+
+
+
+.contain{
+    width: 650rpx;
+    height: 250rpx;
+    margin: 25rpx auto 0 auto;
+}
+.time{
+    width: 600rpx;
+    height: 40rpx;
+    font-size: 28rpx;
+    color: #555;
+    margin:45rpx auto 0 auto;
+    text-align: left;
+}
+.place-name{
+    width: 600rpx;
+    height: 40rpx;
+    font-size: 28rpx;
+    color: #555;
+    margin: 12rpx auto 0 auto;
+    text-align: left;
+}
+.place-address{
+    width: 600rpx;
+    height: 40rpx;
+    font-size: 28rpx;
+    color: #555;
+    border-color: green;
+    margin: 12rpx auto 0 auto;
+    text-align: left;
+}
+.n{
+    width: 24rpx;
+    height: 24rpx;
+    float: left;
+    margin: 1rpx 12rpx 0 0;
+}
+.m{
+    width: 24rpx;
+    height: 24rpx;
+    float: left;
+    margin: 4rpx 12rpx 0 0;
+}
+.c{
+    width: 24rpx;
+    height: 24rpx;
+    float: left;
+    margin: 3rpx 12rpx 0 0;
+}
+.c image{
+    width: 24rpx;
+    height: 24rpx;
+}
+.n image{
+    width: 24rpx;
+    height: 24rpx;
+}
+.m image{
+    width: 24rpx;
+    height: 24rpx;
+}
+.place-nam{
+    margin: 6rpx 0 0 22rpx;
+    font-size: 30rpx;
+    color: #555;
+}
+.place-addres{
+    margin: 6rpx 0 0 22rpx;
+    font-size: 30rpx;
+    color: #555;
+}
+.ti{
+    font-size: 30rpx;
+    color: #555;
+}
+
+.info{
+    text-align: center;
+    color: #555;
+    font-weight: bold;
+    margin-top: 30rpx;
 }

@@ -139,7 +139,9 @@
 
 .del-btn{
     width: 550rpx;
-    margin: 350rpx auto 0 auto;
+    position: fixed;
+    bottom:35rpx;
+    left: 100rpx;
 }
 
 
@@ -150,7 +152,7 @@
     margin: 25rpx auto 0 auto;
 }
 .time{
-    width: 500rpx;
+    width: 600rpx;
     height: 40rpx;
     font-size: 28rpx;
     color: #555;
@@ -158,7 +160,7 @@
     text-align: left;
 }
 .place-name{
-    width: 500rpx;
+    width: 600rpx;
     height: 40rpx;
     font-size: 28rpx;
     color: #555;
@@ -166,7 +168,7 @@
     text-align: left;
 }
 .place-address{
-    width: 500rpx;
+    width: 600rpx;
     height: 40rpx;
     font-size: 28rpx;
     color: #555;
@@ -217,4 +219,18 @@
 .ti{
     font-size: 30rpx;
     color: #555;
+}
+
+.qrcode{
+    width: 500rpx;
+    margin: 70rpx auto auto auto;
+    text-align: center;
+    color: #555;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+.qrcode image{
+    width: 160rpx;
+    height: 160rpx;
+    margin-bottom: 20rpx;
 }

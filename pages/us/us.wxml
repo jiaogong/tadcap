@@ -8,8 +8,7 @@
 
 <view class="area">
     <view class="a">蝌蚪签到的创作者是</view>
-    <view class="a">东华大学计算机学院的几个大三学生</view>
-    <view class="a">现在我们正在寻求XXX方面的实习</view>
+    <view class="a">东华大学计算机学院的四个大三学生</view>
     <view class="a">如果你喜欢我们的作品</view>
     <view class="a">欢迎联系我们</view>
 </view>

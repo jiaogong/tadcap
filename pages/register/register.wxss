@@ -138,6 +138,16 @@
     background-color: #F5F5F5;
 }
 
+.happy{
+    width: 350rpx;
+    margin: 70rpx auto auto auto;
+    text-align: center;
+}
+.happy image{
+    width: 160rpx;
+    height: 160rpx;
+    margin-bottom: 30rpx;
+}
 
 /***************复制过来的*******************/
 
@@ -182,9 +192,10 @@
   padding:15px;  
   font: 20px;  
   text-align: center;  
+  font-weight: bold;
 }  
 .drawer_content {  
-  height: 410rpx;  
+  height: 210rpx;  
   overflow-y: scroll; /*超出父盒子高度可滚动*/  
 }  
   
@@ -196,51 +207,16 @@
   color: #3CC51F;  
 }  
   
-.top{  
-    padding-top:8px;  
-}  
-.bottom {  
-    padding-bottom:8px;  
-}  
-.title {  
-    height: 30px;  
-    line-height: 30px;  
-    width: 160rpx;  
-    text-align: center;  
-    display: inline-block;  
-    font: 300 28rpx/30px "microsoft yahei";  
-}  
-  
-.input_base {  
-    border: 2rpx solid #ccc;  
-    padding-left: 10rpx;  
-    margin-right: 50rpx;  
-}  
-.input_h30{  
-    height: 30px;  
-    line-height: 30px;  
-}  
-.input_h60{  
-    height: 60px;  
-}  
-.input_view{  
-    font: 12px "microsoft yahei";  
-    background: #fff;  
-    color:#000;  
-    line-height: 30px;  
-}  
-  
-input {  
-    font: 12px "microsoft yahei";  
-    background: #fff;  
-    color:#000 ;  
-}  
-radio{  
-    margin-right: 20px;  
-}  
-.grid { display: -webkit-box; display: box; }  
-.col-0 {-webkit-box-flex:0;box-flex:0;}  
-.col-1 {-webkit-box-flex:1;box-flex:1;}  
-.fl { float: left;}  
-.fr { float: right;}  
+.hehe{
+    width: 350rpx;
+    margin: 25rpx auto auto auto;
+    color: #555555;
+    text-align: center;
+}
 
+.line{
+    width: 500rpx;
+    height:1rpx;
+    background-color: #999;
+    margin-bottom: 25rpx;
+}

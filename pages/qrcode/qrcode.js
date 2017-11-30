@@ -3,13 +3,33 @@ var code = require('../../utils/wxqrcode.js')
 Page({
 
   data: {
-      qrcode: null
+      qrcode: null,
+      name:null
   },
 
 
   onLoad: function (options) {
-      this.setData({
-          qrcode: code.createQrCodeImg('123', { 'size': parseInt(500) })
+      let id = options.id;
+      let name = options.name;
+      let endTime = options.endTime;
+      let that = this;
+      wx.showModal({
+          title: '使用方法',
+          content: '点击确认以后截图保存，在活动现场放置打印好的二维码',
+          showCancel:false,
+      })
+      wx.request({
+          url: 'https://tadcap.com/getQRcode',
+          data: {
+              projectId: id,
+              endTime: endTime
+          },
+          success: function (res) {
+              that.setData({
+                  qrcode: res.data,
+                  name:name
+              });
+          }
       })
   },
 

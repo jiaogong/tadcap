@@ -7,15 +7,61 @@ Page({
   data: {
     vue:{},
     time:'',
-    id:0
+    id:0,
+    txt:'订阅提醒',
+    flag:false,
+    infoflag:false,
+    buttonflag:true
   },
 
-
-
-  share: function () {
-      wx.navigateTo({
-          url: '../share/share?id=' + this.data.id
+  //删除签到
+  dell: function (event) {
+      var id = event.currentTarget.dataset.id
+      wx.showModal({
+          title: '确认删除这个签到？',
+          content: '如果要继续参加这个签到需要重新报名',
+          confirmColor: '#FF0002',
+          success(e) {
+              if (e.confirm) {
+                  var that = this
+                  wx.request({
+                      url: 'https://tadcap.com/deleteMyJoinProject',
+                      data:{
+                          projectId:id,
+                          userId:app.data.userId
+                      },
+                      success: function (res) {
+                          wx.showToast({
+                              title: '删除成功',
+                              duration: 1000,
+                              success: function () {
+                                  wx.navigateBack({})
+                              }
+                          })
+                      }
+                  })
+              }
+          }
       })
+  },
+
+  fork: function (e) {
+     let that = this;
+     that.setData({
+         txt:'已订阅',
+         buttonflag:true
+     });
+     wx.request({
+         url: 'https://tadcap.com/fork',
+         data:{
+             projectId:that.data.id,
+             userId:app.data.userId,
+             formId: e.detail.formId
+         },
+         success:function(res){
+             console.log(res);
+         }
+     })
   },
 
 
@@ -29,16 +75,39 @@ Page({
     wx.request({
         url: 'https://tadcap.com/getProjectInfo?projectId=' + join_id,
         success: function (res) {
-            //帅极了的模块，处理时间
-            ///////////////
-            console.log(99999)
-            var time = new Date(parseInt(res.data.start_time) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
+            let info = false;
+            if(res.data.information != ''){
+                info = true;
+            }
+            var time = new Date(parseInt(res.data.start_time)).toLocaleString().replace(/:\d{1,2}$/, ' ');
             
             that.setData({
                 vue:res.data,
                 time:time,
-                id: join_id
+                id: join_id,
+                infoflag:info
             })
+        }
+    })
+
+    //查看用户是否订阅过通知
+    wx.request({
+        url: 'https://tadcap.com/checkMessageFlag',
+        data:{
+            projectId: join_id,
+            userId:app.data.userId
+        },
+        success:function(res){
+            let flg = true;
+            let txt = '已订阅';
+            if(res.data[0].message_flag === 0){
+                flg = false;
+                txt = '订阅提醒'
+            }
+            that.setData({
+                buttonflag:flg,
+                txt:txt
+            });
         }
     })
   },

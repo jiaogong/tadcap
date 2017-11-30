@@ -25,7 +25,7 @@ onLoad: function (options) {
     var that = this;
     //渲染创建的签到列表
     wx.request({
-        url: 'https://tadcap.com/getUserCreatedProject?userId=' + app.globalData.userId,
+        url: 'https://tadcap.com/getUserCreatedProject?userId=' + app.data.userId,
             success: function (res) {
                 console.log(res.statusCode)
                 if (res.data.length === 0 || res.statusCode != 200) {
@@ -36,16 +36,16 @@ onLoad: function (options) {
                 else {
                     console.log(res)
                     let dataList = res.data;
-                    let timestamp = Math.round(new Date().getTime() / 1000);         
+                    let timestamp = Date.now();         
                     for (let i = 0; i < dataList.length; i++){               
-                        dataList[i].start_time = new Date(parseInt(dataList[i].start_time) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
-                        if (timestamp > dataList[i].endTime){
-                            dataList[i].endTime = '已结束'
+                        dataList[i].start_time = new Date(parseInt(dataList[i].start_time)).toLocaleString().replace(/:\d{1,2}$/, ' ');
+                        if (timestamp > dataList[i].end_time){
+                            dataList[i].end_time = '已结束'
                             dataList[i].flag = 'top-le'
                             dataList[i].creator = '/images/icon/ent.png'
                         }
                         else{
-                            dataList[i].endTime = '进行中'
+                            dataList[i].end_time = '进行中'
                             dataList[i].flag = 'top-left'
                             dataList[i].creator = '/images/icon/enter.png'   
                         }

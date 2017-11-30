@@ -18,7 +18,7 @@
         <view class="name">
             <text>{{item.project_name}}</text>
         </view>
-    <image src='/images/icon/enter.png' class='right'></image>
+    <image src='{{item.creator}}' class='right'></image>
     <view class='user'>
         <image src='/images/icon/id.png'></image>
         <text>{{item.project_id}}</text>

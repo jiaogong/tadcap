@@ -1,0 +1,24 @@
+/* pages/refuse/refuse.wxss */
+.container{
+    width: 350rpx;
+    height: 500rpx;
+    margin: 200rpx auto auto auto;
+    text-align: center;
+    font-size: 28rpx;
+    color: #555555;
+}
+
+.container image{
+    width: 160rpx;
+    height: 160rpx;
+    margin-bottom: 30rpx;
+}
+
+.block{
+    width: 750rpx;
+    height: 25rpx;
+}
+
+button{
+    margin-top: 45rpx;
+}

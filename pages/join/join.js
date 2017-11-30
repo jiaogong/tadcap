@@ -14,48 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
-    //////////渲染加入的签到列表
-    wx.request({
-        url: 'https://tadcap.com/getUserJoinProject?userId=' + app.globalData.userId,
-        success: function (res) {
-            console.log(res);
-            if (res.data.length === 0 || res.statusCode != 200) {
-                that.setData({
-                    tips: true
-                })
-            }
-            else {
-                //帅极了的模块，处理时间
-                ///////////////
-                //////////////////
-                var a = res.data
-                var j = a.length
-                console.log(a.length)
-                var timestamp = Date.parse(new Date());
-                for (let i = 0; i < j; i++) {
-                    a[i].start_time = new Date(parseInt(a[i].start_time) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
-                    
-                    if (timestamp > a[i].end_time) {
-                        a[i].end_time = '已结束'
-                        a[i].flag = 'top-le'
-                        a[i].creator = '/images/icon/ent.png'
-                    }
-                    else {
-                        a[i].end_time = '进行中'
-                        a[i].flag = 'top-left'
-                        a[i].creator = '/images/icon/enter.png'
-                    }
-                }
-                var dataList = a.reverse()
-                that.setData({
-                    //隐藏欢迎提示
-                    tips: false,
-                    data_list: dataList
-                })
-            }
-        }
-    })
+
      
 
 
@@ -80,7 +39,52 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+      var that = this
+      //渲染加入的签到列表
+      wx.request({
+          url: 'https://tadcap.com/getUserJoinProject?userId=' + app.data.userId,
+          success: function (res) {
+              console.log(res);
+              if (res.data.length === 0 || res.statusCode != 200) {
+                  that.setData({
+                      tips: true
+                  })
+              }
+              else {
+                  //帅极了的模块，处理时间
+                  var a = res.data
+                  var j = a.length
+                  console.log(a.length)
+                  var timestamp = Date.now();
+                  for (let i = 0; i < j; i++) {
+                      a[i].start_time = new Date(parseInt(a[i].start_time)).toLocaleString().replace(/:\d{1,2}$/, ' ');
+
+                      if (timestamp > a[i].end_time) {
+                          a[i].end_time = '已结束'
+                          a[i].flag = 'top-le'
+                          a[i].creator = '/images/icon/ent.png'
+                      }
+                      else {
+                          a[i].end_time = '进行中'
+                          a[i].flag = 'top-left'
+                          a[i].creator = '/images/icon/enter.png'
+                      }
+                  }
+                  var dataList = a.reverse()
+                  that.setData({
+                      //隐藏欢迎提示
+                      tips: false,
+                      data_list: dataList
+                  })
+              }
+          },
+          fail:function(){
+              that.setData({
+                  //显示欢迎提示
+                  tips: true
+              })
+          }
+      })
   },
 
   /**

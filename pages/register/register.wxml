@@ -19,23 +19,26 @@
     <image src='/images/icon/project.png' class='change' bindtap='preview'></image>
 
 
-<view class='cut'>未到成员列表</view>
+<view class='cut' wx:if="{{!flag}}">未到成员列表</view>
+
+<view wx:if="{{flag}}" class='happy'>
+    <image src="/images/icon/happy.png"></image>
+    <view class='sty'>所有人都到齐了</view>
+</view>
 
 <view class='block'></view>
 
-<block wx:for='{{data_list}}' wx:key='item'>
-    <view class='list' hover-class="hover" hover-stay-time="100"  bindtap="powerDrawer" data-statu="open">
+<block wx:for='{{pip}}' wx:key='item'>
+    <view class='list' hover-class="hover" hover-stay-time="100"  bindtap="powerDrawer" data-statu="open" data-id="{{index}}">
         <view class='nocom'>
         <image src='/images/icon/lv1.png' class='lv'></image>
         {{item.diyValue1}}
-                <image src='/images/icon/delete.png' class='delete' catchtap='cut'></image>
+                <image src='/images/icon/delete.png' class='delete' catchtap='cut' data-id="{{index}}"></image>
         </view>
 
     </view>
 </block>
 
-<!-- 12///////////////////////////////////////////////////////////////////// -->
-<!-- <view class="btn" bindtap="powerDrawer" data-statu="open">button</view>   -->
   
 <!--mask-->  
 <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>  
@@ -45,32 +48,13 @@
   
   <!--drawer content-->  
   <view class="drawer_title">个人信息</view>  
-
+<view class='line'></view>
   <view class="drawer_content">  
-
-    <view class="top grid">  
-      <label class="title col-0">标题</label>  
-      <input class="input_base input_h30 col-1" name="rName" value="可自行定义内容"></input>  
-    </view>  
-    <view class="top grid">  
-      <label class="title col-0">标题</label>  
-      <input class="input_base input_h30 col-1" name="mobile" value="110"></input>  
-    </view>  
-    <view class="top grid">  
-      <label class="title col-0">标题</label>  
-      <input class="input_base input_h30 col-1" name="phone" value="拒绝伸手党"></input>  
-    </view>  
-    <view class="top grid">  
-      <label class="title col-0">标题</label>  
-      <input class="input_base input_h30 col-1" name="Email" value="仅供学习使用"></input>  
-    </view>
-
-    <view class="top bottom grid">  
-      <label class="title col-0">备注</label>  
-      <input class="input_base input_h30 col-1" name="bz"></input>  
-    </view>  
-
-
+    <view class='hehe' wx:if="{{a}}">{{vue.diy_name1}}：{{personInfo.diyValue1}}</view>
+    <view class='hehe' wx:if="{{b}}">{{vue.diy_name2}}：{{personInfo.diyValue2}}</view>
+    <view class='hehe' wx:if="{{c}}">{{vue.diy_name3}}：{{personInfo.diyValue3}}</view>
+    <view class='hehe' wx:if="{{d}}">{{vue.diy_name4}}：{{personInfo.diyValue4}}</view>
+    <view class='hehe' wx:if="{{e}}">{{vue.diy_name5}}：{{personInfo.diyValue5}}</view>
   </view>  
   <view class="btn_ok" bindtap="powerDrawer" data-statu="close">关闭</view>  
 </view>  

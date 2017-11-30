@@ -5,20 +5,46 @@ Page({
     vue:{},
     npm:{},
     pip:{},
-    pid:null
-
+    pid:null,
+    downid:null,
+    personInfo:null,
+    flag:false,
+    a:true,
+    b:true,
+    c:true,
+    d:true,
+    e:true
     },
 
 preview:function(){
     wx.navigateTo({
-        url: '../simple/simple',
+        url: '../simple/simple?id=' + this.data.pid,
     })
 },
 
-cut:function(){
+cut:function(e){
+    let that = this;
+    var downid = e.currentTarget.dataset.id;
+    var personInfo = this.data.pip[downid];
+    console.log(personInfo)
     wx.showModal({
         title: '是否补签？',
         content: '这个操作无法撤回',
+        success:function(res){
+            if(res.confirm){
+                wx.request({
+                    url: 'https://tadcap.com/sign',
+                    data:{
+                        userId: personInfo.user_id,
+                        projectId:that.data.pid
+                    },
+                    success:function(res){
+                        that.onShow();
+                    }
+                    
+                })
+            }
+        }
     })
 },
 
@@ -31,32 +57,34 @@ cut:function(){
         wx.request({
             url: 'https://tadcap.com/getProjectInfo?projectId=' + id,
             success: function (res) {
-                console.log(res)
+                // console.log(res)
+                let a = true, b = true, c = true, d = true, e = true;
+                if(res.data.diy_name1 == '未选中'){
+                    a = false;
+                }
+                if (res.data.diy_name2 == '未选中') {
+                    b = false;
+                }
+                if (res.data.diy_name3 == '未选中') {
+                    c = false;
+                }
+                if (res.data.diy_name4 == '未选中') {
+                    d = false;
+                }
+                if (res.data.diy_name5 == '未选中') {
+                    e = false;
+                }
                 that.setData({
-                    vue:res.data
+                    vue:res.data,
+                    a:a,
+                    b:b,
+                    c:c,
+                    d:d,
+                    e:e
                 })
             }
         })
-        /////
-        wx.request({
-            url: 'https://tadcap.com/getJoinerInfo?projectId=' + id,
-            success: function (res) {
-                console.log(res)
-                that.setData({
-                    npm: res.data
-                })
-            }
-        })
-
-        wx.request({
-            url: 'https://tadcap.com/unSign?projectId=' + id,
-            success: function (res) {
-                console.log(res)
-                that.setData({
-                    pip: res.data
-                });
-            }
-        })
+        
         
     },
 
@@ -72,6 +100,33 @@ cut:function(){
      */
     onShow: function () {
         let that = this;
+        /////
+        wx.request({
+            url: 'https://tadcap.com/getJoinerInfo?projectId=' + that.data.pid,
+            success: function (res) {
+                // console.log(res)
+                that.setData({
+                    data_list: res.data,
+                    npm: res.data
+                })
+            }
+        })
+
+        wx.request({
+            url: 'https://tadcap.com/unSign?projectId=' + that.data.pid,
+            success: function (res) {
+                // console.log(666666666666666666)
+                // console.log(res.data)
+                if (res.data.length == 0) {
+                    that.setData({
+                        flag: true
+                    });
+                }
+                that.setData({
+                    pip: res.data
+                });
+            }
+        })
         
     },
 
@@ -98,7 +153,13 @@ cut:function(){
 
     //复制过来的
 powerDrawer: function (e) {  
-    var currentStatu = e.currentTarget.dataset.statu;  
+    var currentStatu = e.currentTarget.dataset.statu;
+    var downid = e.currentTarget.dataset.id;
+    var personInfo = this.data.pip[downid];
+    console.log(personInfo)
+    this.setData({
+        personInfo: personInfo
+    });
     this.util(currentStatu)  
   },  
   util: function(currentStatu){  

@@ -1,17 +1,37 @@
 // pages/myjoin/myjoin.js
-Page({
+var utils = require('../../utils/util.js')
+var app = getApp()
 
+Page({
 
     data: {
         vue: {},
-        time: ''
+        time: '',
+        id: 0,
+        txt: '订阅提醒',
+        flag: false,
+        infoflag: false,
+        buttonflag: true
     },
 
 
 
-    share: function () {
-        wx.redirectTo({
-            url: '/pages/join/join',
+    fork: function (e) {
+        let that = this;
+        that.setData({
+            txt: '已订阅',
+            buttonflag: true
+        });
+        wx.request({
+            url: 'https://tadcap.com/fork',
+            data: {
+                projectId: that.data.id,
+                userId: app.data.userId,
+                formId: e.detail.formId
+            },
+            success: function (res) {
+                console.log(res);
+            }
         })
     },
 
@@ -21,44 +41,44 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        var id = options.id
+        var join_id = options.id
         var that = this
         wx.request({
-            url: 'https://tadcap.com/getProjectInfo?projectId=' + id,
+            url: 'https://tadcap.com/getProjectInfo?projectId=' + join_id,
             success: function (res) {
-                //把时间转化成能看的
-                var begin = res.data.start_time
-                var end = res.data.end_time
-                var d = new Date(begin)
-                var year = d.getFullYear()
-                var month = d.getMonth() + 1;
-                var day = d.getDate();
-                var hour = d.getHours();
-                var minute = d.getMinutes();
-                var e = new Date(end)
-                var nian = e.getFullYear()
-                var yue = e.getMonth() + 1;
-                var ri = e.getDate();
-                var xiaoshi = d.getHours();
-                var fenzhong = d.getMinutes();
-                year = String(year)
-                month = String(month)
-                day = String(day)
-                hour = String(hour)
-                minute = String(minute)
-                nian = String(nian)
-                yue = String(yue)
-                ri = String(ri)
-                xiaoshi = String(xiaoshi)
-                fenzhong = String(fenzhong)
-                var start_time = year + ' -' + month + '-' + day + ' ' + hour + ':' + minute
-                var end_time = nian + ' -' + yue + '-' + ri + ' ' + xiaoshi + ':' + fenzhong
-                var time = start_time + ' ' + '至' + ' ' + end_time
-                console.log(res)
+                let info = false;
+                if (res.data.information != '') {
+                    info = true;
+                }
+                var time = new Date(parseInt(res.data.start_time)).toLocaleString().replace(/:\d{1,2}$/, ' ');
+
                 that.setData({
                     vue: res.data,
-                    time: time
+                    time: time,
+                    id: join_id,
+                    infoflag: info
                 })
+            }
+        })
+
+        //查看用户是否订阅过通知
+        wx.request({
+            url: 'https://tadcap.com/checkMessageFlag',
+            data: {
+                projectId: join_id,
+                userId: app.data.userId
+            },
+            success: function (res) {
+                let flg = true;
+                let txt = '已订阅';
+                if (res.data[0].message_flag === 0) {
+                    flg = false;
+                    txt = '订阅提醒'
+                }
+                that.setData({
+                    buttonflag: flg,
+                    txt: txt
+                });
             }
         })
     },

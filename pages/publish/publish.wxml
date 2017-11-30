@@ -10,7 +10,7 @@
 <block wx:for="{{dataList}}" wx:key="item">
     <view class='container' hover-class="hover"  hover-stay-time="100" bindtap="simple" data-id="{{item.project_id}}" >
         <view class='{{item.flag}}'>
-            {{item.endTime}}
+            {{item.end_time}}
         </view>
         <view class="name">
             {{item.project_name}}

@@ -88,13 +88,13 @@ check:function(){
 
   },
   bindDateChange: function (e) {
-    //   console.log('picker发送选择改变，携带值为', e.detail.value)
+      console.log('picker发送选择改变，携带值为', e.detail.value)
       this.setData({
           date: e.detail.value
       })
   },
   bindTimeChange: function (e) {
-    //   console.log('picker发送选择改变，携带值为', e.detail.value)
+      console.log('picker发送选择改变，携带值为', e.detail.value)
       this.setData({
           time: e.detail.value
       })
@@ -103,11 +103,22 @@ check:function(){
 
 //定位
     choseLocation:function(){
+        //查询用户有没有获取授权
+        wx.getSetting({
+            success: function (res) {
+                if (res.authSetting["scope.userInfo"] === false ||
+                    res.authSetting["scope.userLocation"] === false) {
+                    wx.redirectTo({
+                        url: '/pages/refuse/refuse',
+                    })
+                }
+            }
+        })
         var that = this;
         wx.chooseLocation({
             success: function(res) {
-                if(res.name.length>10){
-                    res.name = res.name.substring(0,10) + '...'
+                if(res.name.length>15){
+                    res.name = res.name.substring(0,15) + '...'
                 }
                 that.setData({
                     place_name:res.name,
@@ -285,73 +296,22 @@ check:function(){
             // q = q + '&'
             // var position = q + w
             // console.log(position)
-        //将日期转化成标准格式
-        var top = this.data.date
-        var x = top.split('-')
-        var a = x[0]
-        var b = x[1]
-        var c = x[2]
-        b = parseInt(b)
-        c = parseInt(c)
-        if (b < 10) {
-            b = String(b)
-            b = '0' + b
-        }
-        if (c < 10) {
-            c = String(c)
-            c = '0' + c
-        }
-        top = a + '-' + b + '-' + c +' '
-        //计算那个草泥马的初始时间问题
-        var shijian = this.data.time
-        shijian = shijian + ':00'
-        var OOXX = top + shijian
-        //日期转时间戳
-        var timestamp1 = new Date(Date.parse(OOXX.replace(/-/g,"/")))
-        timestamp1 = timestamp1.getTime()/1000
-        console.log('OOXX:' + OOXX)
-        console.log(timestamp1)
-        //草泥马的
-        //将时间转化为标准格式
-        var time = this.data.time
-        var y = time.split(':')
-        var c = y[0]
-        var d = y[1]
-        //先计算加上迟到时间变成多少
-        c = parseInt(c)
-        d = parseInt(d)
-        var key = this.data.count
-        d = d + key
-        //时间进位
-        if (d >= 60) {
-            d = d - 60
-            c = c + 1
-            if (c >= 24) {
-                c = c - 24
-            }
-        }
-        if (c < 10) {
-            c = String(c)
-            c = '0' + c
-        }
-        if (d < 10) {
-            d = String(d)
-            d = '0' + d
-        }
-        time = c + ':' + d + ':00'
-        var timeKey = top + time
-        var timestamp2 = new Date(Date.parse(timeKey.replace(/-/g, "/")))
-        timestamp2 = timestamp2.getTime() / 1000
-        console.log('timeKey:' + timeKey)
-        console.log(timestamp2)
+        //计算初始时间
+        var startDate = them.data.date + ' ' + them.data.time;
+        var date = "2014-05-08 00:22";
+        startDate = new Date(Date.parse(startDate.replace(/-/g, "/")));
+        startDate = startDate.getTime();
+        //计算结束时间
+        var endDate = parseInt(startDate) + them.data.count*60*1000;
+        endDate = endDate.toString();
+
         wx.request({
             url: 'https://tadcap.com/createProject',
             data: {
                 projectName: e.detail.value.ProjectName,
-                creator: app.globalData.userId,
-                startTime: timestamp1,
-                endTime: timestamp2,
-                // theLocation: position,
+                creator: app.data.userId,
+                startTime: startDate,
+                endTime: endDate,
                 longitude:q,
                 latitude:w,//纬度
                 information: e.detail.value.add,
@@ -367,7 +327,7 @@ check:function(){
             },
             method: 'POST',
             header: {
-                'content-type': 'application/x-www-form-urlencoded'
+                'content-type': 'application/json' // 默认值
             },
             success: function (res) {
                 console.log(res)
@@ -495,7 +455,7 @@ check:function(){
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    console.log(app.data.userId)
   }
 
 })

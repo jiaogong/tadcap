@@ -5,16 +5,51 @@
  <view class="line"></view> 
 
 <form bindsubmit="submit">
-<block  wx:for="{{data_list}}">
-    <view class="container">
-        <view class="ask">
-            {{item}}
-        </view>
-        <view class="answer">
-            <input type="text"/>
-        </view>
+
+<view class="container" wx:if="{{key1}}">
+    <view class="ask">
+        {{data1}}
+    </view> 
+    <view class="answer">
+        <input type="text" name="value1"/>
     </view>
-</block>
+</view>
+
+<view class="container" wx:if="{{key2}}">
+    <view class="ask">
+        {{data2}}
+    </view> 
+    <view class="answer">
+        <input type="text" name="value2" type='number'/>
+    </view>
+</view>
+
+<view class="container" wx:if="{{key3}}">
+    <view class="ask">
+        {{data3}}
+    </view> 
+    <view class="answer">
+        <input type="text" name="value3"/>
+    </view>
+</view>
+
+<view class="container" wx:if="{{key4}}">
+    <view class="ask">
+        {{data4}}
+    </view> 
+    <view class="answer">
+        <input type="text" name="value4"/>
+    </view>
+</view>
+
+<view class="container" wx:if="{{key5}}">
+    <view class="ask">
+        {{data5}}
+    </view> 
+    <view class="answer">
+        <input type="text" name="value5"/>
+    </view>
+</view>
 
 <view class="btn">
     <button type="primary" class="btn" formType="submit"  disabled="{{disable}}">提交</button>

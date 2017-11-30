@@ -40,7 +40,7 @@
 
 .img1{
     position: absolute;
-    top: 700rpx;
+    top: 650rpx;
     left: 250rpx;
     width: 250rpx;
     height: 250rpx;
@@ -48,7 +48,7 @@
 
 .txt1{
     position: absolute;
-    top: 960rpx;
+    top: 910rpx;
     left: 235rpx;
     font-size: 24rpx;
     color: #BBBBBB;
@@ -58,7 +58,7 @@
     width: 65rpx;
     height: 50rpx;
     position: absolute;
-    top: 1020rpx;
+    top: 970rpx;
     right: 80rpx;
 }
 .tal-left{

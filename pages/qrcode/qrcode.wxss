@@ -16,12 +16,22 @@ page{
     margin: 35rpx auto auto auto;
     border-radius: 3px;
     text-align: center;
+    color: #555;
+    font-weight: bold;
+    font-size: 36rpx;
 }
 
 .qrcode{
-    width: 585rpx;
-    height: 666rpx;
-    margin: 30rpx auto 25rpx auto;
+    width: 550rpx;
+    height: 570rpx;
+    margin: 30rpx auto 0rpx auto;
+}
+
+.sao{
+    width: 643rpx;
+    height: 2rpx;
+    margin: 0rpx auto 15rpx auto;
+    background-color: #BBB;
 }
 
 .place{

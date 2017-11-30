@@ -96,7 +96,7 @@
     margin: 25rpx auto 0 auto;
 }
 .time{
-    width: 500rpx;
+    width: 600rpx;
     height: 40rpx;
     font-size: 28rpx;
     color: #555;
@@ -104,7 +104,7 @@
     text-align: left;
 }
 .place-name{
-    width: 500rpx;
+    width: 600rpx;
     height: 40rpx;
     font-size: 28rpx;
     color: #555;
@@ -112,7 +112,7 @@
     text-align: left;
 }
 .place-address{
-    width: 500rpx;
+    width: 600rpx;
     height: 40rpx;
     font-size: 28rpx;
     color: #555;

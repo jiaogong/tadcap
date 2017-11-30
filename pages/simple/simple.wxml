@@ -41,27 +41,15 @@
 
 
 <view class="share">
-    <button bindtap="share" type="primary" data-id="{{vue.project_id}}">邀请好友报名</button>
+    <button  type="primary" data-id="{{vue.project_id}}" open-type="share">邀请好友报名</button>
     <view class="block-share"></view>
-    <text>发送到需要报名的群聊或者好友</text>
+    <text>转发到需要报名的群聊</text>
 </view>
 
-<!-- <view class="id">
-    项目ID：{{vue.projectId}}
-    <view class="id-bootom">
-        可通过搜索项目ID号报名
-    </view>
+<view class='qrcode' bindtap='getQRcode' wx:if="{{qrflag}}">
+    <image src='/images/icon/qrcode.png'></image>
+    <view>获取签到二维码</view>
 </view>
-
-<view class="line"></view> -->
-
-<!-- <view class="data" bindtap="change" hover-class="hover" hover-stay-time="100">
-     <view class="should">应到人数：{{vue.shouldComeNum}}人</view>
-     <view class="real">实到人数：{{vue.comeNum}}人</view>
-     <view class="more">未到人数：{{vue.shouldComeNum-vue.comeNum}}人</view>
-</view>
-
-<view class="aa">点击查看详情</view> -->
 
 <view class="del-btn">
     <button  bindtap="dell" data-id="{{vue.project_id}}" class="bbtn">删除签到</button>

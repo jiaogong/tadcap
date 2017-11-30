@@ -6,7 +6,7 @@
 
 <view class='cover'>
 <view class='block'></view>
-    <text class='name'>{{vue.projectName}}</text>
+    <text class='name'>{{vue.project_name}}</text>
 
     <view class="container">
 

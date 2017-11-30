@@ -25,7 +25,7 @@ baoming:function(){
         url: 'https://tadcap.com/getProjectInfo?projectId=' + id,
         success: function (res) {
             console.log(res)
-            var time = new Date(parseInt(res.data.start_time) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
+            var time = new Date(parseInt(res.data.start_time)).toLocaleString().replace(/:\d{1,2}$/, ' ');
             console.log(time)
             console.log(666)
             that.setData({

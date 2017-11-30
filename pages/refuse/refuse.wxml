@@ -1,0 +1,8 @@
+<view class='container'>
+    <image src="/images/icon/sad.png"></image>
+    <view>蝌蚪签到的基本功能需要获得您的授权才可以使用</view>
+    <view class='block'></view>
+    <view>它需要在签到时获取您的地理位置以及基本个人信息</view>
+    <button type='primary' bindtap='change'>点击进入授权页面</button>
+</view>
+

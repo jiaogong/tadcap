@@ -17,7 +17,9 @@
         "pages/simple/simple",
         "pages/share/share",
         "pages/perchas/perchas",
-        "pages/qrcode/qrcode"
+        "pages/qrcode/qrcode",
+        "pages/refuse/refuse",
+        "pages/setting/setting"
     ],
     "window": {
         "backgroundTextStyle": "light",

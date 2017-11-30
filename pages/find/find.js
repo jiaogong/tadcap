@@ -59,21 +59,29 @@ formsubmit:function(res){
     ////////////////////////////////
 
     onLoad: function () {
+        
+    },
+    onPullDownRefresh(event){
+        setTimeout(wx.stopPullDownRefresh(),2500)
+    },
+    onShow: function () {
+        // this.onLoad()
         var that = this;
         //渲染创建的签到列表
         wx.request({
-            url: 'https://tadcap.com/getUserCreatedProject?userId=' + app.globalData.userId,        
+            url: 'https://tadcap.com/getUserCreatedProject?userId=' + app.data.userId,
             success: function (res) {
-                if (res.data.length === 0){
+                console.log(res)
+                if (res.data.length === 0) {
                     that.setData({
                         tips: true
                     })
                 }
-                else{
+                else {
                     var dataList = res.data
                     var a = res.data
                     var j = a.length
-                    var timestamp = Date.parse(new Date());
+                    var timestamp = Date.now();
                     for (let i = 0; i < j; i++) {
                         if (timestamp > a[i].end_time) {
                             a[i].creator = '/images/icon/gry.png'
@@ -92,12 +100,5 @@ formsubmit:function(res){
             }
         })
 
-    },
-    onPullDownRefresh(event){
-        setTimeout(wx.stopPullDownRefresh(),2500)
-    },
-    onShow: function () {
-        this.onLoad()
-        
     },
 })

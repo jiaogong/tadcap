@@ -4,14 +4,22 @@ var utils = require('../../utils/util.js')
 Page({
   data: {
     vue:{},
-    time:''
-
+    time:'',
+    projectId:null,
+    qrflag:false
   },
 
 share:function(event){
     var id = event.currentTarget.dataset.id
     wx.navigateTo({
         url: '../share/share?id=' + id,
+    })
+},
+
+getQRcode:function(){
+    let that = this;
+    wx.navigateTo({
+        url: '/pages/qrcode/qrcode?id=' + that.data.projectId + '&name=' + that.data.vue.project_name + '&endTime=' + that.data.vue.end_time
     })
 },
 
@@ -54,17 +62,28 @@ change:function(){
    */
   onLoad: function (options) {
     var id = options.id
+    this.setData({
+        projectId:id
+    });
     var that = this
     wx.request({
         url: 'https://tadcap.com/getProjectInfo?projectId=' + id,
         success: function (res) {
             console.log(res);
+            let flag;
+            if(res.data.qrcode === 1){
+                flag = true;
+            }
+            else{
+                flag = false;
+            }
             //把时间转化成能看的
             var begin = res.data.start_time;
-            var time = new Date(parseInt(begin) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');;
+            var time = new Date(parseInt(begin)).toLocaleString().replace(/:\d{1,2}$/, ' ');;
             that.setData({
                 vue:res.data,
-                time:time
+                time:time,
+                qrflag:flag
             })
         }
     })
@@ -82,5 +101,17 @@ change:function(){
    */
   onShow: function () {
   
+  },
+  onShareAppMessage(){
+      return {
+          title: '你有一个新的签到，请查收',
+          path: '/pages/share/share?id=' + this.data.projectId,
+          success: function (res) {
+              // 转发成功
+          },
+          fail: function (res) {
+              // 转发失败
+          }
+      }
   }
 })

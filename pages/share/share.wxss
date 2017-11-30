@@ -87,7 +87,7 @@
     height: 40rpx;
     font-size: 28rpx;
     color: #555;
-    margin:45rpx auto 0 auto;
+    margin:20rpx auto 0 auto;
     text-align: left;
 }
 .place-name{
